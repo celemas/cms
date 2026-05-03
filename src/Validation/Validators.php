@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Duon\Cms\Validation;
 
+use Duon\Sire\Contract\Value;
 use Duon\Sire\Validator;
 use Duon\Sire\ValidatorRegistry;
-use Duon\Sire\Value;
 
 final class Validators
 {
