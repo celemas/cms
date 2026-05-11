@@ -102,7 +102,7 @@ vendor/bin/phpunit --testsuite end2end
 vendor/bin/phpunit --group integration
 ```
 
-*Note: E2E tests are in the `end2end` test suite by configuration in phpunit.dist.xml*
+*Note: E2E tests are in the `end2end` test suite by configuration in phpunit.xml.dist*
 
 ### Generate Coverage Report
 
