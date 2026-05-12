@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DUONCMS_DB_HOST: localhost
-      DUONCMS_DB_NAME: duoncms
-      DUONCMS_DB_USER: duoncms
-      DUONCMS_DB_PASSWORD: duoncms
+      DUONCMS_DB_NAME: celemascms
+      DUONCMS_DB_USER: celemascms
+      DUONCMS_DB_PASSWORD: celemascms
     steps:
       - name: Setup PHP extensions
         uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # v2
@@ -42,12 +42,6 @@ jobs:
         run: |
           ./vendor/bin/mago fmt --check
           ./vendor/bin/mago lint
-          php -d pcov.enabled=1 ./vendor/bin/phpunit --testdox --coverage-clover=clover.xml --coverage-text --coverage-php=coverage/cover.php --colors=always
+          php -d pcov.enabled=1 ./vendor/bin/phpunit --testdox --coverage-text --coverage-php=coverage/cover.php --colors=always
           ./vendor/bin/coverlyzer coverage/cover.php
 
-      - name: Upload coverage report to Codacy
-        continue-on-error: true
-        uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1.3.0
-        with:
-          api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: clover.xml
