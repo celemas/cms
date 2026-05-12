@@ -1,8 +1,10 @@
 # Changelog
 
-## [Unreleased](https://github.com/duoncode/boiler/compare/0.1.0-beta.2...HEAD)
+## [Unreleased](https://github.com/celemas/cms/compare/0.1.0-beta.2...HEAD)
 
-### Breaking changes
+### Breaking Changes
+
+- Rename package metadata, root namespace, repository URLs, homepage, and contact email to Celemas.
 
 This release removes the `Node` / `Page` / `Block` / `Document` inheritance hierarchy and dedicated node kind modeling. Content types are now plain PHP classes with metadata attributes, and behavior is derived from route/render conventions.
 
@@ -11,14 +13,14 @@ This release removes the `Node` / `Page` / `Block` / `Document` inheritance hier
 - **Removed** the dead `Fulltext` class.
 - **Removed** `#[Page]`, `#[Block]`, `#[Document]` metadata attributes.
 - **Changed** routability/rendering semantics to use `#[Route]` and `#[Render]` conventions (renderer fallback remains node handle).
-- **Changed** finder facade class from `Duon\Cms\Finder\Finder` to `Duon\Cms\Cms`.
-- **Changed** plugin class from `Duon\Cms\Cms` to `Duon\Cms\Plugin`.
-- **Changed** CMS configuration ownership. Regular apps can use the new `Duon\Cms\App` facade; advanced manual bootstraps pass `Duon\Cms\Config` to `new Plugin($config)` instead of passing it to `Duon\Core\App`. `Duon\Cms\Config` no longer implements the removed core config interfaces.
-- **Changed** `Duon\Cms\Config` construction to `new Config(string $root, array $settings = [])`. App name, debug mode, environment, app secret, public path, frontend sessions, and database DSN now live in `app.name`, `app.debug`, `app.env`, `app.secret`, `path.public`, `session.enabled`, and `db.dsn` settings instead of constructor arguments or public properties. `path.public` defaults to `$root . '/public'`. `app.name` reads `APP_NAME`, falling back to `duoncms`. `session.enabled` reads `SITE_SESSION_ENABLED`. `app.secret` reads `APP_SECRET`. `db.dsn` reads `DATABASE_URL`. `app.name` is not validated or normalized.
-- **Changed** `Duon\Cms\Boiler\Error\Handler` to read debug/env/error settings from `Duon\Cms\Config`; its constructor now accepts config, factory, and logger.
-- **Changed** frontend session middleware configuration from `sessionEnabled` constructor arguments on `Duon\Cms\App` and `Duon\Cms\Plugin` to the `session.enabled` setting.
+- **Changed** finder facade class from `Celemas\Cms\Finder\Finder` to `Celemas\Cms\Cms`.
+- **Changed** plugin class from `Celemas\Cms\Cms` to `Celemas\Cms\Plugin`.
+- **Changed** CMS configuration ownership. Regular apps can use the new `Celemas\Cms\App` facade; advanced manual bootstraps pass `Celemas\Cms\Config` to `new Plugin($config)` instead of passing it to `Celemas\Core\App`. `Celemas\Cms\Config` no longer implements the removed core config interfaces.
+- **Changed** `Celemas\Cms\Config` construction to `new Config(string $root, array $settings = [])`. App name, debug mode, environment, app secret, public path, frontend sessions, and database DSN now live in `app.name`, `app.debug`, `app.env`, `app.secret`, `path.public`, `session.enabled`, and `db.dsn` settings instead of constructor arguments or public properties. `path.public` defaults to `$root . '/public'`. `app.name` reads `APP_NAME`, falling back to `celemascms`. `session.enabled` reads `SITE_SESSION_ENABLED`. `app.secret` reads `APP_SECRET`. `db.dsn` reads `DATABASE_URL`. `app.name` is not validated or normalized.
+- **Changed** `Celemas\Cms\Boiler\Error\Handler` to read debug/env/error settings from `Celemas\Cms\Config`; its constructor now accepts config, factory, and logger.
+- **Changed** frontend session middleware configuration from `sessionEnabled` constructor arguments on `Celemas\Cms\App` and `Celemas\Cms\Plugin` to the `session.enabled` setting.
 - **Changed** CMS session options to read `cookie_secure` from `SESSION_COOKIE_SECURE`, `cookie_lifetime` from `SESSION_COOKIE_LIFETIME`, and `gc_maxlifetime` from `SESSION_IDLE_TIMEOUT`.
-- **Changed** `Duon\Cms\App::create()` to accept a root path plus an optional settings array, create `Duon\Cms\Config` internally, and expose the config as public `$app->config`.
+- **Changed** `Celemas\Cms\App::create()` to accept a root path plus an optional settings array, create `Celemas\Cms\Config` internally, and expose the config as public `$app->config`.
 - **Changed** template embedding API from `find->block(...)` to `cms->render(...)`.
 - **Changed** all Field and Value classes to depend on the `FieldOwner` interface instead of the `Node` class.
 - **Changed** node type-hints throughout the framework from `Node` to `object`.
@@ -30,7 +32,7 @@ This release removes the `Node` / `Page` / `Block` / `Document` inheritance hier
 - `Title`, `HasInit`, `HandlesFormPost`, `ProvidesRenderContext` interfaces for behavioral hooks.
 - `FieldOwner` interface decoupling fields from the node hierarchy.
 - `FieldHydrator` service for external field initialization (two-phase init).
-- `NodeFactory` service for creating node instances via `duon/wire` autowiring.
+- `NodeFactory` service for creating node instances via `celemas/wire` autowiring.
 - `NodeSerializer` service for node data serialization, blueprint generation, and title resolution.
 - `NodeManager` service for node CRUD operations (save, create, delete).
 - `PathManager` service for URL path persistence.
@@ -39,11 +41,11 @@ This release removes the `Node` / `Page` / `Block` / `Document` inheritance hier
 - `NodeMeta` caching facade and `Meta` reflection reader for node metadata.
 - `NodeFieldOwner` adapter bridging `FieldOwner` with `Context` and uid.
 - `Plugin::NODE_TAG` constant replacing the old `Node::class` registry tag.
-- Bundled Boiler renderer and error integration under the existing `Duon\Cms\Boiler` namespace. `duon/cms` now requires `duon/boiler` directly, so applications no longer need the separate `duon/cms-boiler` package.
+- Bundled Boiler renderer and error integration under the existing `Celemas\Cms\Boiler` namespace. `celemas/cms` now requires `celemas/boiler` directly, so applications no longer need the separate `celemas/cms-boiler` package.
 - Default Boiler `view` renderer registration using the new `path.views` config key, which defaults to `/views` relative to `path.root`.
-- `Duon\Cms\App` facade for regular CMS applications. It wraps the core app and CMS plugin, forwards the common app and CMS configuration APIs, installs the default error middleware, and adds the CMS catchall route during `run()`.
+- `Celemas\Cms\App` facade for regular CMS applications. It wraps the core app and CMS plugin, forwards the common app and CMS configuration APIs, installs the default error middleware, and adds the CMS catchall route during `run()`.
 - Built-in fallback templates for Boiler error pages plus `error.*` config keys for enabling/disabling the default handler, replacing the error renderer, configuring error views, and toggling Whoops debug pages.
-- Root-based `Config` initialization that loads `.env` with `vlucas/phpdotenv`, sets default `app.name` from `APP_NAME` with a `duoncms` fallback, and exposes `Config::requireEnv(...)` for required environment variables.
+- Root-based `Config` initialization that loads `.env` with `vlucas/phpdotenv`, sets default `app.name` from `APP_NAME` with a `celemascms` fallback, and exposes `Config::requireEnv(...)` for required environment variables.
 
 ### Migration guide
 
@@ -78,7 +80,7 @@ class Article implements Title
 Use the CMS app facade for regular application bootstrapping:
 
 ```php
-use Duon\Cms\App;
+use Celemas\Cms\App;
 
 $root = dirname(__DIR__);
 $app = App::create($root, [
@@ -90,9 +92,9 @@ $app->node(\App\Cms\Node\HomePage::class);
 $app->run();
 ```
 
-When bootstrapping manually with `duon/core`, pass the CMS config to the CMS plugin instead of the core app.
+When bootstrapping manually with `celemas/core`, pass the CMS config to the CMS plugin instead of the core app.
 
-Constructor dependencies are autowired from the Registry via `duon/wire`:
+Constructor dependencies are autowired from the Registry via `celemas/wire`:
 
 ```php
 #[Name('Department'), Route('/{title}')]
@@ -113,7 +115,7 @@ final class Department implements Title
 }
 ```
 
-## [0.1.0-beta.2](https://github.com/duoncode/cms/releases/tag/0.1.0-beta.2) (2026-02-01)
+## [0.1.0-beta.2](https://github.com/celemas/cms/releases/tag/0.1.0-beta.2) (2026-02-01)
 
 Codename: Benjamin
 
@@ -121,6 +123,6 @@ Codename: Benjamin
 - Improved the `install-panel` command output and removed the unnecessary Quma command dependency.
 - Updated the panel release workflow to support prerelease tag patterns and manual (retroactive) runs.
 
-## [0.1.0-beta.1](https://github.com/duoncode/cms/releases/tag/0.1.0-beta.1) (2026-02-01)
+## [0.1.0-beta.1](https://github.com/celemas/cms/releases/tag/0.1.0-beta.1) (2026-02-01)
 
 Initial release - Codename: Sabine
