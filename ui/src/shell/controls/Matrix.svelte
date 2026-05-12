@@ -54,39 +54,39 @@
 
 		// Return appropriate default structure based on field type
 		const typeMap: Record<string, () => GenericFieldData> = {
-			'Duon\\Cms\\Field\\Text': () => ({
+			'Celemas\\Cms\\Field\\Text': () => ({
 				type: 'text',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Duon\\Cms\\Field\\Textarea': () => ({
+			'Celemas\\Cms\\Field\\Textarea': () => ({
 				type: 'text',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Duon\\Cms\\Field\\RichText': () => ({
+			'Celemas\\Cms\\Field\\RichText': () => ({
 				type: 'richtext',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Duon\\Cms\\Field\\Code': () => ({
+			'Celemas\\Cms\\Field\\Code': () => ({
 				type: 'code',
 				syntax: codeSyntaxes[0],
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Duon\\Cms\\Field\\Checkbox': () => ({ type: 'checkbox', value: false }),
-			'Duon\\Cms\\Field\\Number': () => ({ type: 'number', value: 0 }),
-			'Duon\\Cms\\Field\\Date': () => ({ type: 'date', value: '' }),
-			'Duon\\Cms\\Field\\Time': () => ({ type: 'time', value: '' }),
-			'Duon\\Cms\\Field\\Image': () => ({ type: 'image', files: [] }),
-			'Duon\\Cms\\Field\\Picture': () => ({ type: 'picture', files: [] }),
-			'Duon\\Cms\\Field\\File': () => ({ type: 'file', files: [] }),
-			'Duon\\Cms\\Field\\Video': () => ({ type: 'video', files: [] }),
-			'Duon\\Cms\\Field\\Grid': () => ({
+			'Celemas\\Cms\\Field\\Checkbox': () => ({ type: 'checkbox', value: false }),
+			'Celemas\\Cms\\Field\\Number': () => ({ type: 'number', value: 0 }),
+			'Celemas\\Cms\\Field\\Date': () => ({ type: 'date', value: '' }),
+			'Celemas\\Cms\\Field\\Time': () => ({ type: 'time', value: '' }),
+			'Celemas\\Cms\\Field\\Image': () => ({ type: 'image', files: [] }),
+			'Celemas\\Cms\\Field\\Picture': () => ({ type: 'picture', files: [] }),
+			'Celemas\\Cms\\Field\\File': () => ({ type: 'file', files: [] }),
+			'Celemas\\Cms\\Field\\Video': () => ({ type: 'video', files: [] }),
+			'Celemas\\Cms\\Field\\Grid': () => ({
 				type: 'grid',
 				columns: 12,
 				value: isTranslatable ? createTranslatableValue() : [],
 			}),
-			'Duon\\Cms\\Field\\Option': () => ({ type: 'option', value: '' }),
-			'Duon\\Cms\\Field\\Iframe': () => ({ type: 'iframe', value: '' }),
-			'Duon\\Cms\\Field\\Hidden': () => ({ type: 'hidden', value: '' }),
+			'Celemas\\Cms\\Field\\Option': () => ({ type: 'option', value: '' }),
+			'Celemas\\Cms\\Field\\Iframe': () => ({ type: 'iframe', value: '' }),
+			'Celemas\\Cms\\Field\\Hidden': () => ({ type: 'hidden', value: '' }),
 		};
 
 		const factory = typeMap[subfield.type];

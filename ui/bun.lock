@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "duon",
+      "name": "celemas",
       "devDependencies": {
         "@codemirror/lang-css": "^6.0.0",
         "@codemirror/lang-html": "^6.0.0",
