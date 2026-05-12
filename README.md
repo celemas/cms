@@ -1,14 +1,14 @@
-# Duon Content Management Framework
+# Celemas Content Management Framework
 
 > **Note**: This library is under active development, some of the listed features are still experimental and subject to change. Large parts of the documentation are missing.
 
 ## Bootstrapping
 
-Use `Duon\Cms\App` for regular CMS applications. It creates the config, core app, and CMS plugin internally, installs the default error handler, adds CMS routes, and registers the catchall route when you call `run()`.
+Use `Celemas\Cms\App` for regular CMS applications. It creates the config, core app, and CMS plugin internally, installs the default error handler, adds CMS routes, and registers the catchall route when you call `run()`.
 
 ```php
-use Duon\Cms\App;
-use Duon\Cms\Locales;
+use Celemas\Cms\App;
+use Celemas\Cms\Locales;
 
 $app = App::create(dirname(__DIR__), [
     'app.name' => 'mycms',
@@ -29,19 +29,19 @@ The CMS app exposes the common CMS configuration API (`section()`, `collection()
 
 ## Defining content types
 
-Content types (nodes) are plain PHP classes annotated with attributes. There is no base class to extend. Dependencies are autowired from the Registry via `duon/wire`.
+Content types (nodes) are plain PHP classes annotated with attributes. There is no base class to extend. Dependencies are autowired from the Registry via `celemas/wire`.
 
 ```php
-use Duon\Cms\Field\Text;
-use Duon\Cms\Field\Grid;
-use Duon\Cms\Field\Image;
-use Duon\Cms\Cms;
-use Duon\Cms\Schema\Label;
-use Duon\Cms\Schema\Required;
-use Duon\Cms\Schema\Route;
-use Duon\Cms\Schema\Translate;
-use Duon\Cms\Node\Contract\Title;
-use Duon\Core\Request;
+use Celemas\Cms\Field\Text;
+use Celemas\Cms\Field\Grid;
+use Celemas\Cms\Field\Image;
+use Celemas\Cms\Cms;
+use Celemas\Cms\Schema\Label;
+use Celemas\Cms\Schema\Required;
+use Celemas\Cms\Schema\Route;
+use Celemas\Cms\Schema\Translate;
+use Celemas\Cms\Node\Contract\Title;
+use Celemas\Core\Request;
 
 #[Label('Department'), Route('/{title}')]
 final class Department implements Title
@@ -115,12 +115,12 @@ Render a node by uid from templates with the neutral cms API:
 
 ## Boiler rendering
 
-`duon/cms` bundles the Boiler renderer under the existing `Duon\Cms\Boiler` namespace and registers it as the default `view` renderer. You do not need to require `duon/cms-boiler` separately or register a renderer for the common case.
+`celemas/cms` bundles the Boiler renderer under the existing `Celemas\Cms\Boiler` namespace and registers it as the default `view` renderer. You do not need to require `celemas/cms-boiler` separately or register a renderer for the common case.
 
 By default, views are loaded from `{path.root}{path.views}`. `path.root` is the project root passed to `App::create()`. `path.views` defaults to `/views` and can be overridden in CMS config:
 
 ```php
-use Duon\Cms\App;
+use Celemas\Cms\App;
 
 $app = App::create(dirname(__DIR__), [
     'path.views' => '/views',
@@ -130,8 +130,8 @@ $app = App::create(dirname(__DIR__), [
 To replace the default renderer or pass custom Boiler arguments, register a `view` renderer before the app boots:
 
 ```php
-use Duon\Cms\App;
-use Duon\Cms\Boiler\Renderer;
+use Celemas\Cms\App;
+use Celemas\Cms\Boiler\Renderer;
 
 $app = App::create(dirname(__DIR__), [
     'app.name' => 'mycms',
@@ -142,9 +142,9 @@ $app->renderer('view', Renderer::class)->args(
 );
 ```
 
-`Duon\Cms\App` installs the bundled error handler by default. Error pages use a dedicated Boiler renderer, so replacing the CMS `view` renderer does not affect error rendering. Project templates named `http-error.php` and `http-server-error.php` in `{path.root}{path.views}` override the built-in fallback templates. Set `error.enabled` to `false` if you want to install custom PSR-15 error middleware yourself.
+`Celemas\Cms\App` installs the bundled error handler by default. Error pages use a dedicated Boiler renderer, so replacing the CMS `view` renderer does not affect error rendering. Project templates named `http-error.php` and `http-server-error.php` in `{path.root}{path.views}` override the built-in fallback templates. Set `error.enabled` to `false` if you want to install custom PSR-15 error middleware yourself.
 
-For advanced integrations, the bundled error integration remains available as `Duon\Cms\Boiler\Error\Handler`. Pass a `Duon\Cms\Config`, core factory, and logger when you create it manually.
+For advanced integrations, the bundled error integration remains available as `Celemas\Cms\Boiler\Error\Handler`. Pass a `Celemas\Cms\Config`, core factory, and logger when you create it manually.
 
 ## Settings
 
@@ -153,7 +153,7 @@ For advanced integrations, the bundled error integration remains available as `D
 Prefer building the settings array upfront and passing it once to `App::create()` or `new Config(...)`. `Config` is immutable after construction, and values such as `path.prefix`, `path.panel`, and `error.enabled` are consumed while the app boots. The immutable shape also lets typed config objects lazily normalize, validate, and cache values safely across long-running worker processes. Use native booleans and integers in PHP settings; environment values are cast by the built-in defaults.
 
 ```php
-use Duon\Cms\App;
+use Celemas\Cms\App;
 
 $root = dirname(__DIR__);
 $settings = [
@@ -188,7 +188,7 @@ Common built-in settings:
 
 ```php
 [
-    'app.name' => env('APP_NAME', 'duoncms'),
+    'app.name' => env('APP_NAME', 'celemascms'),
     'app.debug' => env('APP_DEBUG', false),
     'app.env' => env('APP_ENV', ''),
     'app.secret' => env('APP_SECRET', null),
@@ -244,8 +244,8 @@ return [
 Test database:
 
 ```bash
-echo "duoncms" | createuser --pwprompt --createdb duoncms
-createdb --owner duoncms duoncms
+echo "celemascms" | createuser --pwprompt --createdb celemascms
+createdb --owner celemascms celemascms
 ```
 
 System Requirements:
