@@ -32,7 +32,7 @@
 		"vlucas/phpdotenv": "^5.6"
 	},
 	"require-dev": {
-		"celemas/dev": "^4.1",
+		"celemas/dev": "^4.2",
 		"filp/whoops": "^2.15",
 		"laminas/laminas-diactoros": "^3"
 	},
