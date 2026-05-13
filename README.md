@@ -244,8 +244,8 @@ return [
 Test database:
 
 ```bash
-echo "celemas" | createuser --pwprompt --createdb celemas
-createdb --owner celemas celemas
+sudo -u postgres createuser --pwprompt --createdb celemas
+createdb --user celemas --owner celemas celemas
 ```
 
 System Requirements:

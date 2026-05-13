@@ -37,8 +37,9 @@ sudo systemctl start postgresql
 Create a PostgreSQL user for testing:
 
 ```bash
-# Create user with CREATEDB privilege
-sudo -u postgres createuser -d -P celemas
+# Create user with CREATEDB privilege and password 'celemas'
+sudo -u postgres createuser --pwprompt --createdb celemas
+createdb --user celemas --owner celemas celemas
 ```
 
 ### 3. Initialize Test Database
@@ -385,12 +386,7 @@ RuntimeException: Migrations not applied to test database. Run: ./run migrate --
 PDOException: SQLSTATE[28000] authentication failed for user "celemas"
 ```
 
-**Solution:** Ensure the database user exists with the correct password:
-
-```bash
-sudo -u postgres createuser -d celemas
-sudo -u postgres psql -c "ALTER USER celemas WITH PASSWORD 'celemas';"
-```
+**Solution:** Ensure the database user exists with the correct password 'celemas' and with CREATEDB privilege. See above.
 
 ### "Permission denied to create database"
 
@@ -441,6 +437,7 @@ jobs:
                     POSTGRES_PASSWORD: celemas
                 options: >-
                     --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
 
                 ports:
                     - 5432:5432
