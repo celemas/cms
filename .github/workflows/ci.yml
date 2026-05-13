@@ -30,6 +30,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
+      - name: Run license lint checks
+        uses: fsfe/reuse-action@v5
+
       - name: Install packages with composer
         run: composer install
 

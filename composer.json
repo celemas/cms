@@ -63,13 +63,15 @@
 		"coverage:test": "php -d xdebug.mode=coverage ./vendor/bin/phpunit --testdox --colors=always",
 		"coverage:analyze": "./vendor/bin/coverlyzer .coverage/coverage.php",
 		"coverage": [
-			"composer coverage:test -- --path-coverage",
-			"composer coverage:analyze"
+			"@coverage:test",
+			"@coverage:analyze"
 		],
+		"license:lint": "if command -v reuse >/dev/null 2>&1; then reuse lint; else echo 'Skipping REUSE lint: reuse not installed'; fi",
 		"ci": [
-			"composer lint",
-			"composer coverage",
-			"composer docs:lint"
+			"@lint",
+			"@coverage",
+			"@license:lint",
+			"@docs:lint"
 		]
 	}
 }
