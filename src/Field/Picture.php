@@ -50,55 +50,51 @@ class Picture extends Field implements
 	public function shape(): Shape
 	{
 		$limitValidators = $this->limitValidators();
-		$shape = Shapes::create()->title($this->label)->keepUnknown();
-		$shape->add('type', 'text', 'required', 'in:picture');
+		$shape = Shapes::create();
+		Shapes::add($shape, 'type', 'text', 'required', 'in:picture');
 
 		if ($this->translateFile) {
 			// File-translatable: separate file arrays per locale
-			$subShape = Shapes::list()->title($this->label)->keepUnknown();
-			$subShape->add('file', 'text');
-			$subShape->add('title', 'text');
-			$subShape->add('alt', 'text');
+			$subShape = Shapes::list();
+			Shapes::add($subShape, 'file', 'text');
+			Shapes::add($subShape, 'title', 'text');
+			Shapes::add($subShape, 'alt', 'text');
 
-			$i18nShape = Shapes::create()->title($this->label)->keepUnknown();
+			$i18nShape = Shapes::create();
 			$locales = $this->owner->locales();
 
 			foreach ($locales as $locale) {
-				$i18nShape
-					->add($locale->id, $subShape, ...$limitValidators)
+				Shapes::add($i18nShape, $locale->id, $subShape, ...$limitValidators)
 					->prepare(Prepare::nullAsEmpty(...));
 			}
 
-			$shape
-				->add('files', $i18nShape, ...$this->validators)
+			Shapes::add($shape, 'files', $i18nShape, ...$this->validators)
 				->prepare(Prepare::nullAsEmpty(...));
 		} elseif ($this->translate) {
 			// Text-translatable: shared files but translatable titles and alt text
-			$fileShape = Shapes::list()->keepUnknown();
-			$fileShape->add('file', 'text', 'required');
+			$fileShape = Shapes::list();
+			Shapes::add($fileShape, 'file', 'text', 'required');
 
 			$locales = $this->owner->locales();
-			$titleShape = Shapes::create()->title($this->label)->keepUnknown();
-			$altShape = Shapes::create()->title($this->label)->keepUnknown();
+			$titleShape = Shapes::create();
+			$altShape = Shapes::create();
 
 			foreach ($locales as $locale) {
-				$titleShape->add($locale->id, 'text');
-				$altShape->add($locale->id, 'text');
+				Shapes::add($titleShape, $locale->id, 'text');
+				Shapes::add($altShape, $locale->id, 'text');
 			}
 
-			$fileShape->add('title', $titleShape)->prepare(Prepare::nullAsEmpty(...));
-			$fileShape->add('alt', $altShape)->prepare(Prepare::nullAsEmpty(...));
-			$shape
-				->add('files', $fileShape, ...$limitValidators, ...$this->validators)
+			Shapes::add($fileShape, 'title', $titleShape)->prepare(Prepare::nullAsEmpty(...));
+			Shapes::add($fileShape, 'alt', $altShape)->prepare(Prepare::nullAsEmpty(...));
+			Shapes::add($shape, 'files', $fileShape, ...$limitValidators, ...$this->validators)
 				->prepare(Prepare::nullAsEmpty(...));
 		} else {
 			// Non-translatable
-			$fileShape = Shapes::list()->keepUnknown();
-			$fileShape->add('file', 'text', 'required');
-			$fileShape->add('title', 'text');
-			$fileShape->add('alt', 'text');
-			$shape
-				->add('files', $fileShape, ...$limitValidators, ...$this->validators)
+			$fileShape = Shapes::list();
+			Shapes::add($fileShape, 'file', 'text', 'required');
+			Shapes::add($fileShape, 'title', 'text');
+			Shapes::add($fileShape, 'alt', 'text');
+			Shapes::add($shape, 'files', $fileShape, ...$limitValidators, ...$this->validators)
 				->prepare(Prepare::nullAsEmpty(...));
 		}
 

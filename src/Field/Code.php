@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Celemas\Cms\Field;
 
+use Celemas\Cms\Validation\Shapes;
 use Celemas\Cms\Value\Code as CodeValue;
 use Celemas\Sire\Shape;
 
@@ -34,18 +35,14 @@ class Code extends Field implements Capability\Translatable, Capability\SyntaxAw
 
 	public function shape(): Shape
 	{
-		$shape = new Shape()
-			->title($this->label)
-			->keepUnknown();
-		$shape->add('type', 'text', 'required', 'in:code');
-		$shape->add('syntax', 'text', 'required', 'in:' . implode(',', $this->getSyntaxes()));
+		$shape = Shapes::create();
+		Shapes::add($shape, 'type', 'text', 'required', 'in:code');
+		Shapes::add($shape, 'syntax', 'text', 'required', 'in:' . implode(',', $this->getSyntaxes()));
 
 		if ($this->translate) {
 			$locales = $this->owner->locales();
 			$defaultLocale = $locales->getDefault()->id;
-			$i18nShape = new Shape()
-				->title($this->label)
-				->keepUnknown();
+			$i18nShape = Shapes::create();
 
 			foreach ($locales as $locale) {
 				$localeValidators = [];
@@ -54,12 +51,12 @@ class Code extends Field implements Capability\Translatable, Capability\SyntaxAw
 					$localeValidators[] = 'required';
 				}
 
-				$i18nShape->add($locale->id, 'text', ...$localeValidators);
+				Shapes::add($i18nShape, $locale->id, 'text', ...$localeValidators);
 			}
 
-			$shape->add('value', $i18nShape, ...$this->validators);
+			Shapes::add($shape, 'value', $i18nShape, ...$this->validators);
 		} else {
-			$shape->add('value', 'text', ...$this->validators);
+			Shapes::add($shape, 'value', 'text', ...$this->validators);
 		}
 
 		return $shape;

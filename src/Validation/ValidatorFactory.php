@@ -19,31 +19,29 @@ class ValidatorFactory
 		protected readonly Locales $locales,
 		private readonly FieldHydrator $hydrator = new FieldHydrator(),
 	) {
-		$this->shape = new Shape()->keepUnknown();
-		$this->shape->add('uid', 'text', 'required', 'maxlen:64');
-		$this->shape->add('parent', 'text', 'maxlen:64');
-		$this->shape->add('published', 'bool', 'required');
-		$this->shape->add('locked', 'bool', 'required');
-		$this->shape->add('hidden', 'bool', 'required');
+		$this->shape = Shapes::create();
+		Shapes::add($this->shape, 'uid', 'text', 'required', 'maxlen:64');
+		Shapes::add($this->shape, 'parent', 'text', 'maxlen:64');
+		Shapes::add($this->shape, 'published', 'bool', 'required');
+		Shapes::add($this->shape, 'locked', 'bool')->empty('missing', 'null')->default(false);
+		Shapes::add($this->shape, 'hidden', 'bool')->empty('missing', 'null')->default(false);
 	}
 
 	public function create(): Shape
 	{
-		$contentShape = new Shape()
-			->title('Content')
-			->keepUnknown();
+		$contentShape = Shapes::create();
 
 		foreach (Factory::fieldNamesFor($this->node) as $fieldName) {
 			$this->add($contentShape, $fieldName, $this->hydrator->getField($this->node, $fieldName));
 		}
 
-		$this->shape->add('content', $contentShape);
+		Shapes::add($this->shape, 'content', $contentShape);
 
 		return $this->shape;
 	}
 
 	protected function add(Shape $shape, string $fieldName, Field $field): void
 	{
-		$shape->add($fieldName, $field->shape())->label($field->getLabel());
+		Shapes::add($shape, $fieldName, $field->shape())->label($field->getLabel());
 	}
 }
