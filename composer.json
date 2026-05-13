@@ -53,15 +53,15 @@
 		}
 	},
 	"scripts": {
-		"test": "./vendor/bin/phpunit --testdox --no-coverage --colors=always",
-		"docs:format": "npx prettier@3.6.2 --write --config ./docs/.prettierrc README.md CHANGELOG.md LICENSE.md",
-		"docs:lint": "npx markdownlint-cli2@0.22.1 --config ./vendor/celemas/dev/config/markdownlint.jsonc README.md CHANGELOG.md LICENSE.md",
+		"test": "@php vendor/bin/phpunit --testdox --no-coverage --colors=always",
+		"docs:format": "npx prettier@3.6.2 --write --config docs/.prettierrc README.md CHANGELOG.md LICENSE.md",
+		"docs:lint": "npx markdownlint-cli2@0.22.1 --config vendor/celemas/dev/config/markdownlint.jsonc README.md CHANGELOG.md LICENSE.md",
 		"lint": [
-			"./vendor/bin/mago fmt --check",
-			"./vendor/bin/mago lint"
+			"@php vendor/bin/mago fmt --check",
+			"@php vendor/bin/mago lint"
 		],
-		"coverage:test": "php -d xdebug.mode=coverage ./vendor/bin/phpunit --testdox --colors=always",
-		"coverage:analyze": "./vendor/bin/coverlyzer .coverage/coverage.php",
+		"coverage:test": "@php -d xdebug.mode=coverage vendor/bin/phpunit --testdox --colors=always",
+		"coverage:analyze": "@php vendor/bin/coverlyzer .coverage/coverage.php",
 		"coverage": [
 			"@coverage:test",
 			"@coverage:analyze"
