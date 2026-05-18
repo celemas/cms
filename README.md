@@ -279,4 +279,4 @@ brew install php php-intl
 
 ## License
 
-Most project files are licensed under [MPL-2.0](LICENSES/MPL-2.0.txt). Files in `panel/` are licensed under [MIT](LICENSES/MIT.txt). See [REUSE.toml](REUSE.toml) for file-level details.
+Most project files are licensed under [MPL-2.0](LICENSES/MPL-2.0.txt). Files in `panel/` and `ui/` are licensed under [MIT](LICENSES/MIT.txt). See [REUSE.toml](REUSE.toml) for file-level details.
