@@ -7,7 +7,7 @@ SPDX-FileCopyrightText = "2022-present Celemas developers and contributors"
 SPDX-License-Identifier = "MPL-2.0"
 
 [[annotations]]
-path = ["panel/**/*.*"]
+path = ["panel/**/*.*", "ui/**/*.*"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2022-present Celemas developers and contributors"
 SPDX-License-Identifier = "MIT"
