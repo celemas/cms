@@ -3,7 +3,6 @@ CREATE EXTENSION btree_gin;
 CREATE EXTENSION unaccent;
 
 CREATE SCHEMA cms;
-CREATE SCHEMA audit;
 
 CREATE FUNCTION cms.update_changed_column()
 	RETURNS TRIGGER AS $$
@@ -63,10 +62,10 @@ CREATE UNIQUE INDEX ux_users_username ON cms.users
 	USING btree (lower(username)) WHERE (deleted IS NULL AND username IS NOT NULL);
 CREATE UNIQUE INDEX ux_users_email ON cms.users
 	USING btree (lower(email)) WHERE (deleted IS NULL AND email IS NOT NULL);
-CREATE FUNCTION cms.process_users_audit()
+CREATE FUNCTION cms.record_user_history()
 	RETURNS TRIGGER AS $$
 BEGIN
-	INSERT INTO audit.users (
+	INSERT INTO cms.users_history (
 		usr, username, email, password, rolename, active,
 		data, editor, changed, deleted
 	) VALUES (
@@ -76,15 +75,15 @@ BEGIN
 
 	RETURN OLD;
 EXCEPTION WHEN unique_violation THEN
-	RAISE WARNING 'Duplicate users audit row skipped. user: %, changed: %', OLD.usr, OLD.changed;
+	RAISE WARNING 'Duplicate user history row skipped. user: %, changed: %', OLD.usr, OLD.changed;
 	RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER users_trigger_01_change BEFORE UPDATE ON cms.users
 	FOR EACH ROW EXECUTE FUNCTION cms.update_changed_column();
-CREATE TRIGGER users_trigger_02_audit AFTER UPDATE
-	ON cms.users FOR EACH ROW EXECUTE PROCEDURE
-	cms.process_users_audit();
+CREATE TRIGGER users_trigger_02_history AFTER UPDATE
+	ON cms.users FOR EACH ROW EXECUTE FUNCTION
+	cms.record_user_history();
 
 
 CREATE TABLE cms.auth_tokens (
@@ -172,10 +171,10 @@ CREATE TABLE cms.nodes (
 );
 CREATE INDEX ix_nodes_type ON cms.nodes USING btree (type);
 CREATE INDEX ix_nodes_content ON cms.nodes USING GIN (content);
-CREATE FUNCTION cms.process_nodes_audit()
+CREATE FUNCTION cms.record_node_history()
 	RETURNS TRIGGER AS $$
 BEGIN
-	INSERT INTO audit.nodes (
+	INSERT INTO cms.nodes_history (
 		node, parent, version, changed, published, hidden, locked,
 		type, editor, deleted, content
 	) VALUES (
@@ -185,15 +184,15 @@ BEGIN
 
 	RETURN OLD;
 EXCEPTION WHEN unique_violation THEN
-	RAISE WARNING 'Duplicate nodes audit row skipped. node: %, changed: %', OLD.node, OLD.changed;
+	RAISE WARNING 'Duplicate node history row skipped. node: %, changed: %', OLD.node, OLD.changed;
 	RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
 CREATE TRIGGER nodes_trigger_02_change BEFORE UPDATE ON cms.nodes
 	FOR EACH ROW EXECUTE FUNCTION cms.update_changed_column();
-CREATE TRIGGER nodes_trigger_03_audit AFTER UPDATE
-	ON cms.nodes FOR EACH ROW EXECUTE PROCEDURE
-	cms.process_nodes_audit();
+CREATE TRIGGER nodes_trigger_03_history AFTER UPDATE
+	ON cms.nodes FOR EACH ROW EXECUTE FUNCTION
+	cms.record_node_history();
 
 
 CREATE TABLE cms.full_text (
@@ -240,10 +239,10 @@ CREATE TABLE cms.drafts (
 	CONSTRAINT pk_drafts PRIMARY KEY (node),
 	CONSTRAINT fk_drafts_nodes FOREIGN KEY (node) REFERENCES cms.nodes (node)
 );
-CREATE FUNCTION cms.process_drafts_audit()
+CREATE FUNCTION cms.record_draft_history()
 	RETURNS TRIGGER AS $$
 BEGIN
-	INSERT INTO audit.drafts (
+	INSERT INTO cms.drafts_history (
 		node, changed, editor, content
 	) VALUES (
 		OLD.node, OLD.changed, OLD.editor, OLD.content
@@ -251,13 +250,13 @@ BEGIN
 
 	RETURN OLD;
 EXCEPTION WHEN unique_violation THEN
-	RAISE WARNING 'Duplicate drafts audit row skipped. draft: %, changed: %', OLD.node, OLD.changed;
+	RAISE WARNING 'Duplicate draft history row skipped. draft: %, changed: %', OLD.node, OLD.changed;
 	RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
-CREATE TRIGGER drafts_trigger_01_audit AFTER UPDATE
-	ON cms.drafts FOR EACH ROW EXECUTE PROCEDURE
-	cms.process_drafts_audit();
+CREATE TRIGGER drafts_trigger_01_history AFTER UPDATE
+	ON cms.drafts FOR EACH ROW EXECUTE FUNCTION
+	cms.record_draft_history();
 
 
 CREATE TABLE cms.menus (
@@ -322,7 +321,7 @@ CREATE TABLE cms.node_tags (
 );
 
 
-CREATE TABLE audit.nodes (
+CREATE TABLE cms.nodes_history (
 	node bigint NOT NULL,
 	parent bigint,
 	version integer NOT NULL,
@@ -334,24 +333,24 @@ CREATE TABLE audit.nodes (
 	editor bigint NOT NULL,
 	deleted timestamp with time zone,
 	content jsonb NOT NULL,
-	CONSTRAINT pk_nodes PRIMARY KEY (node, changed),
-	CONSTRAINT fk_audit_nodes FOREIGN KEY (node)
+	CONSTRAINT pk_nodes_history PRIMARY KEY (node, changed),
+	CONSTRAINT fk_nodes_history_nodes FOREIGN KEY (node)
 		REFERENCES cms.nodes (node)
 );
 
 
-CREATE TABLE audit.drafts (
+CREATE TABLE cms.drafts_history (
 	node bigint NOT NULL,
 	changed timestamp with time zone NOT NULL,
 	editor bigint NOT NULL,
 	content jsonb NOT NULL,
-	CONSTRAINT pk_drafts PRIMARY KEY (node, changed),
-	CONSTRAINT fk_audit_drafts FOREIGN KEY (node)
+	CONSTRAINT pk_drafts_history PRIMARY KEY (node, changed),
+	CONSTRAINT fk_drafts_history_drafts FOREIGN KEY (node)
 		REFERENCES cms.drafts (node)
 );
 
 
-CREATE TABLE audit.users (
+CREATE TABLE cms.users_history (
 	usr bigint NOT NULL,
 	username text,
 	email text,
@@ -362,7 +361,7 @@ CREATE TABLE audit.users (
 	editor bigint NOT NULL,
 	changed timestamp with time zone NOT NULL DEFAULT now(),
 	deleted timestamp with time zone,
-	CONSTRAINT pk_users PRIMARY KEY (usr, changed),
-	CONSTRAINT fk_audit_users FOREIGN KEY (usr)
+	CONSTRAINT pk_users_history PRIMARY KEY (usr, changed),
+	CONSTRAINT fk_users_history_users FOREIGN KEY (usr)
 		REFERENCES cms.users (usr)
 );

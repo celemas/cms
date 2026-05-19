@@ -29,4 +29,5 @@ INSERT INTO public.migrations (migration, applied) VALUES
 	('000000-000005-rename-html-to-richtext.sql', now()),
 	('000000-000006-standardize-integer-types.sql', now()),
 	('000000-000007-snake-case-identifiers.sql', now()),
-	('000000-000008-cleanup.sql', now());
+	('000000-000008-cleanup.sql', now()),
+	('000000-000009-history-tables.sql', now());

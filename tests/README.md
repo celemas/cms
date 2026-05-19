@@ -329,7 +329,7 @@ E2E tests **disable transactions** because the CMS creates separate database con
 
 The cleanup process handles foreign key constraints by deleting in proper order:
 
-1. Delete FK-referenced records (audit records, fulltext index, etc.)
+1. Delete FK-referenced records (history records, fulltext index, etc.)
 2. Delete the main records
 3. Delete created types
 

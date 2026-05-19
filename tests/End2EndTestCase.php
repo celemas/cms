@@ -93,6 +93,7 @@ class End2EndTestCase extends IntegrationTestCase
 
 		// Delete created users
 		foreach ($this->createdUserIds as $userId) {
+			$db->execute('DELETE FROM cms.users_history WHERE usr = :usr', ['usr' => $userId])->run();
 			$db->execute('DELETE FROM cms.users WHERE usr = :usr', ['usr' => $userId])->run();
 		}
 
@@ -102,8 +103,9 @@ class End2EndTestCase extends IntegrationTestCase
 			$db->execute('DELETE FROM cms.url_paths WHERE node = :node', ['node' => $nodeId])->run();
 			$db->execute('DELETE FROM cms.full_text WHERE node = :node', ['node' => $nodeId])->run();
 			$db->execute('DELETE FROM cms.node_tags WHERE node = :node', ['node' => $nodeId])->run();
+			$db->execute('DELETE FROM cms.drafts_history WHERE node = :node', ['node' => $nodeId])->run();
 			$db->execute('DELETE FROM cms.drafts WHERE node = :node', ['node' => $nodeId])->run();
-			$db->execute('DELETE FROM audit.nodes WHERE node = :node', ['node' => $nodeId])->run();
+			$db->execute('DELETE FROM cms.nodes_history WHERE node = :node', ['node' => $nodeId])->run();
 			$db->execute('DELETE FROM cms.nodes WHERE node = :node', ['node' => $nodeId])->run();
 		}
 
