@@ -1,6 +1,6 @@
-INSERT INTO cms.roles (rolename) VALUES ('system'), ('superuser'), ('admin'), ('editor');
+INSERT INTO /*:cms.prefix:*/roles (rolename) VALUES ('system'), ('superuser'), ('admin'), ('editor');
 
-INSERT INTO cms.users (
+INSERT INTO /*:cms.prefix:*/users (
 	uid,
 	username,
 	email,
@@ -22,7 +22,7 @@ INSERT INTO cms.users (
 	1
 );
 
-INSERT INTO public.migrations (migration, applied) VALUES
+INSERT INTO migrations (migration, applied) VALUES
 	('000000-000002-named-checks.sql', now()),
 	('000000-000003-fix-authtokens-trigger.sql', now()),
 	('000000-000004-drop-node-kind.sql', now()),

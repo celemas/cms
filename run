@@ -11,16 +11,18 @@ use Celemas\Cms\MigrationFactory;
 use Celemas\Container\Container;
 use Celemas\Quma\Commands as QumaCommands;
 use Celemas\Quma\Connection;
+use Celemas\Quma\Delimiters;
 
+$config = new Config(__DIR__);
 $container = new Container();
-$container->add(Config::class, new Config(__DIR__));
+$container->add($config::class, $config);
 
 $conn = new Connection(
 	'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
 	__DIR__ . '/db/sql',
 )
-	->migrations(__DIR__ . '/db/migrations/install')
-	->fetch(PDO::FETCH_ASSOC);
+	->placeholders(Delimiters::comments(), $config->db->placeholders)
+	->migrations(__DIR__ . '/db/migrations/install');
 
 $commands = QumaCommands::get($conn, migrationFactory: new MigrationFactory($container));
 $commands->add(new RecreateDb('celemas', 'celemas', 'celemas'));
