@@ -199,10 +199,69 @@ final class ConfigTest extends TestCase
 				'pgsql' => [
 					'cms.prefix' => 'cms.',
 					'app.prefix' => 'app.',
+					'cms.obj' => '',
 				],
 			],
 			$config->db->placeholders,
 		);
+	}
+
+	public function testPostgresqlObjectPrefixIsDerivedFromCmsPrefix(): void
+	{
+		$config = new Config(self::root(), [
+			'db.dsn' => 'pgsql:dbname=cms',
+			'db.placeholders' => [
+				'pgsql' => [
+					'cms.prefix' => 'cms_',
+				],
+			],
+		]);
+
+		$this->assertSame('cms_', $config->db->placeholders['pgsql']['cms.obj']);
+
+		$config = new Config(self::root(), [
+			'db.dsn' => 'pgsql:dbname=cms',
+		]);
+
+		$this->assertSame('', $config->db->placeholders['pgsql']['cms.obj']);
+
+		$config = new Config(self::root(), [
+			'db.dsn' => 'pgsql:dbname=cms',
+			'db.placeholders' => [
+				'pgsql' => [
+					'cms.prefix' => '',
+				],
+			],
+		]);
+
+		$this->assertSame('', $config->db->placeholders['pgsql']['cms.obj']);
+	}
+
+	public function testPostgresqlObjectPrefixCanBeOverridden(): void
+	{
+		$config = new Config(self::root(), [
+			'db.dsn' => 'pgsql:dbname=cms',
+			'db.placeholders' => [
+				'pgsql' => [
+					'cms.prefix' => 'cms.',
+					'cms.obj' => 'custom_',
+				],
+			],
+		]);
+
+		$this->assertSame('custom_', $config->db->placeholders['pgsql']['cms.obj']);
+
+		$config = new Config(self::root(), [
+			'db.dsn' => 'pgsql:dbname=cms',
+			'db.placeholders' => [
+				'all' => [
+					'cms.obj' => 'shared_',
+				],
+			],
+		]);
+
+		$this->assertSame('shared_', $config->db->placeholders['all']['cms.obj']);
+		$this->assertSame('', $config->db->placeholders['pgsql']['cms.obj']);
 	}
 
 	public function testDatabasePlaceholdersRequireCmsPrefix(): void

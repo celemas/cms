@@ -64,7 +64,7 @@ final class Database
 		if ($prefix !== null) {
 			$this->assertValidPrefix($prefix, $driver);
 
-			return $placeholders;
+			return $this->withPostgresqlObjectPrefix($placeholders);
 		}
 
 		$prefix = $placeholders['all']['cms.prefix'] ?? null;
@@ -72,10 +72,38 @@ final class Database
 		if ($prefix !== null) {
 			$this->assertValidPrefix($prefix, $driver);
 
-			return $placeholders;
+			return $this->withPostgresqlObjectPrefix($placeholders);
 		}
 
 		throw new RuntimeException('Invalid table prefix.');
+	}
+
+	/**
+	 * @param array<non-empty-string, array<non-empty-string, string>> $placeholders
+	 *
+	 * @return array<non-empty-string, array<non-empty-string, string>>
+	 */
+	private function withPostgresqlObjectPrefix(array $placeholders): array
+	{
+		if (array_key_exists('cms.obj', $placeholders['pgsql'] ?? [])) {
+			return $placeholders;
+		}
+
+		$prefix = $placeholders['pgsql']['cms.prefix'] ?? $placeholders['all']['cms.prefix'] ?? null;
+
+		if ($prefix === null) {
+			return $placeholders;
+		}
+
+		if (!is_string($prefix)) {
+			throw new RuntimeException('Invalid table prefix.');
+		}
+
+		$this->assertValidPrefix($prefix, 'pgsql');
+
+		$placeholders['pgsql']['cms.obj'] = str_ends_with($prefix, '.') ? '' : $prefix;
+
+		return $placeholders;
 	}
 
 	private function assertValidPrefix(mixed $prefix, string $driver): void

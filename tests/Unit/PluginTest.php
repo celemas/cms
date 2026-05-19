@@ -50,7 +50,7 @@ final class PluginTest extends TestCase
 		$placeholders = $connection->config->placeholders;
 
 		$this->assertEquals(Delimiters::comments(), $placeholders?->delimiters());
-		$this->assertSame(['cms.prefix' => 'cms.'], $placeholders?->values());
+		$this->assertSame(['cms.prefix' => 'cms.', 'cms.obj' => ''], $placeholders?->values());
 	}
 
 	public function testExplicitViewRendererOverridesDefaultViewRenderer(): void
