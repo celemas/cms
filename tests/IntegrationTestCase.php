@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace Celemas\Cms\Tests;
 
 use Celemas\Cms\Cms;
+use Celemas\Cms\Config;
 use Celemas\Cms\Context;
 use Celemas\Cms\Node\Types;
 use Celemas\Cms\Plugin;
 use Celemas\Container\Container;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Database;
+use Celemas\Quma\Delimiters;
 use PDO;
 use RuntimeException;
 
@@ -44,10 +46,13 @@ class IntegrationTestCase extends TestCase
 	protected static function initializeTestDatabase(): void
 	{
 		// Create shared connection for migration check
+		$config = new Config(self::root());
+
 		self::$sharedConnection = new Connection(
 			'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
 			self::root() . '/db/sql',
 		)
+			->placeholders(Delimiters::comments(), $config->db->placeholders)
 			->migrations(self::root() . '/db/migrations')
 			->fetch(PDO::FETCH_ASSOC);
 
@@ -113,10 +118,13 @@ class IntegrationTestCase extends TestCase
 
 	public function conn(): Connection
 	{
+		$config = new Config(self::root());
+
 		return new Connection(
 			'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
 			self::root() . '/db/sql',
 		)
+			->placeholders(Delimiters::comments(), $config->db->placeholders)
 			->migrations(self::root() . '/db/migrations')
 			->fetch(PDO::FETCH_ASSOC);
 	}

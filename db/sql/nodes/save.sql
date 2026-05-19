@@ -1,4 +1,4 @@
-INSERT INTO cms.nodes (
+INSERT INTO /*:cms.prefix:*/nodes (
 	uid,
 	parent,
 	type,
@@ -20,7 +20,7 @@ SELECT
 	:editor,
 	:content
 FROM
-	cms.types t
+	/*:cms.prefix:*/types t
 WHERE
 	t.handle = :type
 
@@ -34,6 +34,6 @@ UPDATE SET
 	editor = :editor,
 	content = :content
 WHERE
-	cms.nodes.uid = :uid
+	/*:cms.prefix:*/nodes.uid = :uid
 
 RETURNING node;

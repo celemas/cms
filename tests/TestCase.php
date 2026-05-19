@@ -10,6 +10,7 @@ use Celemas\Container\Container;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Factory\Laminas;
 use Celemas\Core\Request;
+use Celemas\Quma\Delimiters;
 use PDO;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Psr\Http\Message\ServerRequestInterface as PsrServerRequest;
@@ -140,11 +141,14 @@ class TestCase extends BaseTestCase
 	 */
 	public function db(): \Celemas\Quma\Database
 	{
+		$config = new Config(self::root());
+
 		return new \Celemas\Quma\Database(
 			new \Celemas\Quma\Connection(
 				'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
 				self::root() . '/db/sql',
 			)
+				->placeholders(Delimiters::comments(), $config->db->placeholders)
 				->migrations(self::root() . '/db/migrations')
 				->fetch(PDO::FETCH_ASSOC),
 		);

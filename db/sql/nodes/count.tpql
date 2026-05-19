@@ -1,11 +1,11 @@
 SELECT
 	COUNT(DISTINCT n.node) AS count
 FROM
-	cms.nodes n
-	INNER JOIN cms.types t USING(type)
-	INNER JOIN cms.users uc ON
+	/*:cms.prefix:*/nodes n
+	INNER JOIN /*:cms.prefix:*/types t USING(type)
+	INNER JOIN /*:cms.prefix:*/users uc ON
 		uc.usr = n.creator
-	INNER JOIN cms.users ue ON
+	INNER JOIN /*:cms.prefix:*/users ue ON
 		ue.usr = n.editor
 WHERE
 	1 = 1

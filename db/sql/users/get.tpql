@@ -16,29 +16,29 @@ SELECT
 	u.changed,
 	u.deleted
 FROM
-	cms.users u
+	/*:cms.prefix:*/users u
 INNER JOIN
-	cms.users c ON
+	/*:cms.prefix:*/users c ON
 		u.creator = c.usr
 INNER JOIN
-	cms.users e ON
+	/*:cms.prefix:*/users e ON
 		u.editor = e.usr
 
 <?php if (isset($token)): ?>
 INNER JOIN
-	cms.auth_tokens at ON
+	/*:cms.prefix:*/auth_tokens at ON
 		at.usr = u.usr
 <?php endif ?>
 
 <?php if (isset($onetimetoken)): ?>
 INNER JOIN
-	cms.one_time_tokens ott ON
+	/*:cms.prefix:*/one_time_tokens ott ON
 		ott.usr = u.usr
 <?php endif ?>
 
 <?php if (isset($sessionhash)) : ?>
 INNER JOIN
-	cms.login_sessions s ON
+	/*:cms.prefix:*/login_sessions s ON
 		s.usr = u.usr
 <?php endif ?>
 

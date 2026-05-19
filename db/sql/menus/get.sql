@@ -8,7 +8,7 @@ WITH RECURSIVE nav AS (
 	   parent,
 	   data
    FROM
-	   cms.menu_items
+	   /*:cms.prefix:*/menu_items
    WHERE
 	   parent IS NULL
 	   AND menu = :menu
@@ -24,7 +24,7 @@ WITH RECURSIVE nav AS (
 	   m.parent,
 	   m.data
    FROM
-	   cms.menu_items m
+	   /*:cms.prefix:*/menu_items m
    JOIN
 		   nav ON m.parent = nav.item
 )

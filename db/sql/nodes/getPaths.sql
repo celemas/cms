@@ -6,7 +6,7 @@ SELECT
 	created,
 	inactive
 FROM
-	cms.url_paths
+	/*:cms.prefix:*/url_paths
 WHERE
 	node = :node
 	AND inactive IS NULL;

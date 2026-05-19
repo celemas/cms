@@ -1,4 +1,4 @@
-UPDATE cms.users
+UPDATE /*:cms.prefix:*/users
 SET
 	email = :email,
 	username = :username,

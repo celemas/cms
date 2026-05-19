@@ -6,6 +6,6 @@ SELECT
 	up.inactive,
 	up.created
 FROM
-	cms.url_paths up
+	/*:cms.prefix:*/url_paths up
 WHERE
 	up.path = :path;

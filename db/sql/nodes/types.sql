@@ -2,4 +2,4 @@ SELECT
 	type,
 	handle
 FROM
-	cms.types;
+	/*:cms.prefix:*/types;

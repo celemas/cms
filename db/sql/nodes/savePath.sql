@@ -1,4 +1,4 @@
-INSERT INTO cms.url_paths (
+INSERT INTO /*:cms.prefix:*/url_paths (
 	node,
 	path,
 	locale,

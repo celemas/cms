@@ -23,15 +23,15 @@ SELECT
 			FILTER (WHERE up.inactive IS NULL AND sup.path IS NOT NULL),
 		'{}')::jsonb AS paths
 FROM
-	cms.nodes n
-	INNER JOIN cms.types t USING(type)
-	LEFT JOIN cms.nodes np ON
+	/*:cms.prefix:*/nodes n
+	INNER JOIN /*:cms.prefix:*/types t USING(type)
+	LEFT JOIN /*:cms.prefix:*/nodes np ON
 		np.node = n.parent
-	INNER JOIN cms.users uc ON
+	INNER JOIN /*:cms.prefix:*/users uc ON
 		uc.usr = n.creator
-	INNER JOIN cms.users ue ON
+	INNER JOIN /*:cms.prefix:*/users ue ON
 		ue.usr = n.editor
-	LEFT JOIN cms.url_paths up ON
+	LEFT JOIN /*:cms.prefix:*/url_paths up ON
 		up.node = n.node
 	LEFT JOIN (
 		SELECT
@@ -39,7 +39,7 @@ FROM
 			sup.path,
 			sup.locale
 		FROM
-			cms.url_paths sup
+			/*:cms.prefix:*/url_paths sup
 		WHERE
 			sup.inactive IS NULL
 	) sup ON sup.node = n.node

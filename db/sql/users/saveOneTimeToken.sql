@@ -1,4 +1,4 @@
-INSERT INTO cms.one_time_tokens (
+INSERT INTO /*:cms.prefix:*/one_time_tokens (
 	token,
 	usr
 ) VALUES (
