@@ -43,11 +43,21 @@ CREATE TABLE cms.users (
 	CONSTRAINT fk_users_users_editor FOREIGN KEY (editor)
 		REFERENCES cms.users (usr),
 	CONSTRAINT ck_users_uid CHECK (char_length(uid) <= 64),
+	CONSTRAINT ck_users_username_or_email CHECK (deleted IS NOT NULL OR username IS NOT NULL OR email IS NOT NULL),
 	CONSTRAINT ck_users_username CHECK
 		(username IS NULL OR (char_length(username) > 0 AND char_length(username) <= 64)),
-	CONSTRAINT ck_users_email CHECK
-		(email IS NULL OR (email SIMILAR TO '%@%' AND char_length(email) >= 5 AND char_length(email) <= 256)),
-	CONSTRAINT ck_users_username_or_email CHECK (username IS NOT NULL OR email IS NOT NULL)
+	CONSTRAINT ck_users_email CHECK (
+		-- This is not full RFC email validation.
+		-- It only rejects obviously malformed addresses as a last database-level safeguard.
+		email IS NULL OR (
+			char_length(email) <= 254
+			AND email !~ '[[:space:]]'
+			AND email NOT LIKE '%..%'
+			AND email NOT LIKE '%.@%'
+			AND email NOT LIKE '%@.%'
+			AND email ~ '^[^@]+@[^@]+[.][^@]+$'
+		)
+	)
 );
 CREATE UNIQUE INDEX ux_users_username ON cms.users
 	USING btree (lower(username)) WHERE (deleted IS NULL AND username IS NOT NULL);
@@ -133,6 +143,7 @@ CREATE TABLE cms.nodes (
 	node bigint GENERATED ALWAYS AS IDENTITY,
 	uid text NOT NULL,
 	parent bigint,
+	version integer NOT NULL DEFAULT 1,
 	published boolean DEFAULT false NOT NULL,
 	hidden boolean DEFAULT false NOT NULL,
 	locked boolean DEFAULT false NOT NULL,
@@ -153,17 +164,22 @@ CREATE TABLE cms.nodes (
 		REFERENCES cms.users (usr),
 	CONSTRAINT fk_nodes_types FOREIGN KEY (type)
 		REFERENCES cms.types (type) ON UPDATE CASCADE ON DELETE NO ACTION,
-	CONSTRAINT ck_nodes_uid CHECK (char_length(uid) <= 64)
+	CONSTRAINT ck_nodes_uid CHECK (
+		-- UIDs can become filesystem directory names, so keep them path-safe and block "..".
+		uid ~ '^(?!.*[.][.])[A-Za-z0-9](?:[A-Za-z0-9._-]{0,62}[A-Za-z0-9])?$'
+	),
+	CONSTRAINT ck_nodes_version CHECK (version > 0)
 );
-CREATE INDEX ix_nodes_content ON cms.nodes USING GIN (type, content);
+CREATE INDEX ix_nodes_type ON cms.nodes USING btree (type);
+CREATE INDEX ix_nodes_content ON cms.nodes USING GIN (content);
 CREATE FUNCTION cms.process_nodes_audit()
 	RETURNS TRIGGER AS $$
 BEGIN
 	INSERT INTO audit.nodes (
-		node, parent, changed, published, hidden, locked,
+		node, parent, version, changed, published, hidden, locked,
 		type, editor, deleted, content
 	) VALUES (
-		OLD.node, OLD.parent, OLD.changed, OLD.published, OLD.hidden, OLD.locked,
+		OLD.node, OLD.parent, OLD.version, OLD.changed, OLD.published, OLD.hidden, OLD.locked,
 		OLD.type, OLD.editor, OLD.deleted, OLD.content
 	);
 
@@ -173,28 +189,6 @@ EXCEPTION WHEN unique_violation THEN
 	RETURN NULL;
 END;
 $$ LANGUAGE plpgsql;
-CREATE FUNCTION cms.check_if_deletable()
-	RETURNS TRIGGER AS $$
-BEGIN
-	IF (
-		NEW.deleted IS NOT NULL
-		AND (
-			SELECT count(*)
-			FROM cms.menu_items mi
-			WHERE
-				mi.data->>'type' = 'node'
-				AND mi.data->>'node' = OLD.node::text
-		) > 0
-	)
-	THEN
-		RAISE EXCEPTION 'node is still referenced in a menu';
-	END IF;
-
-	RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-CREATE TRIGGER nodes_trigger_01_delete BEFORE UPDATE ON cms.nodes
-	FOR EACH ROW EXECUTE PROCEDURE cms.check_if_deletable();
 CREATE TRIGGER nodes_trigger_02_change BEFORE UPDATE ON cms.nodes
 	FOR EACH ROW EXECUTE FUNCTION cms.update_changed_column();
 CREATE TRIGGER nodes_trigger_03_audit AFTER UPDATE
@@ -331,6 +325,7 @@ CREATE TABLE cms.node_tags (
 CREATE TABLE audit.nodes (
 	node bigint NOT NULL,
 	parent bigint,
+	version integer NOT NULL,
 	changed timestamp with time zone NOT NULL,
 	published boolean NOT NULL,
 	hidden boolean NOT NULL,
