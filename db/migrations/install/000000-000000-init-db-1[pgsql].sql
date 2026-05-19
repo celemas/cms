@@ -1,9 +1,3 @@
-CREATE EXTENSION btree_gist;
-CREATE EXTENSION btree_gin;
-CREATE EXTENSION unaccent;
-
-CREATE SCHEMA cms;
-
 CREATE FUNCTION cms.update_changed_column()
 	RETURNS TRIGGER AS $$
 BEGIN
