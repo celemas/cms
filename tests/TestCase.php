@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests;
+namespace Cosray\Tests;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Locales;
 use Celemas\Container\Container;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Factory\Laminas;
 use Celemas\Core\Request;
 use Celemas\Quma\Delimiters;
+use Cosray\Config;
+use Cosray\Locales;
 use PDO;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Psr\Http\Message\ServerRequestInterface as PsrServerRequest;

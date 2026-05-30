@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\Input\Token;
-use Celemas\Cms\Finder\Input\TokenGroup;
-use Celemas\Cms\Finder\Input\TokenType;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\Input\Token;
+use Cosray\Finder\Input\TokenGroup;
+use Cosray\Finder\Input\TokenType;
 
 final class QueryLexer
 {

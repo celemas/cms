@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Exception\NoSuchProperty;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Node\Schema\Registry;
-use Celemas\Cms\Schema\Title;
+use Cosray\Exception\NoSuchProperty;
+use Cosray\Exception\RuntimeException;
+use Cosray\Field\Field;
+use Cosray\Node\Schema\Registry;
+use Cosray\Schema\Title;
 use ReflectionClass;
 use ReflectionProperty;
 use ReflectionUnionType;

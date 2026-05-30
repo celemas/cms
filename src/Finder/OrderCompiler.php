@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Exception\ParserException;
+use Cosray\Exception\ParserException;
 
 final class OrderCompiler
 {

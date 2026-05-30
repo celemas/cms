@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
 use Celemas\Session\Session as BaseSession;
 use SessionHandlerInterface;

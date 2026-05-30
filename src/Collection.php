@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Finder\Nodes;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Types;
+use Cosray\Exception\RuntimeException;
+use Cosray\Finder\Nodes;
+use Cosray\Node\Node;
+use Cosray\Node\Types;
 use Override;
 
 abstract class Collection implements NavigationItem

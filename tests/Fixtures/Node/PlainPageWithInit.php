@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Node\Contract\HasInit;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Route;
+use Cosray\Field\Text;
+use Cosray\Node\Contract\HasInit;
+use Cosray\Schema\Label;
+use Cosray\Schema\Route;
 
 #[Label('Plain Page With Init')]
 #[Route('/plain-page-with-init/{uid}')]

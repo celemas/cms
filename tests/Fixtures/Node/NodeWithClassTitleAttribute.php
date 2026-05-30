@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Schema\Title;
+use Cosray\Field\Text;
+use Cosray\Schema\Title;
 
 #[Title('heading')]
 class NodeWithClassTitleAttribute

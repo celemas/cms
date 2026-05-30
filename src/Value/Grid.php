@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Assets\ResizeMode;
-use Celemas\Cms\Assets\Size;
-use Celemas\Cms\Field;
-use Celemas\Cms\Field\Capability\Translatable;
-use Celemas\Cms\Field\Owner;
-use Celemas\Cms\Util\Html as HtmlUtil;
+use Cosray\Assets\ResizeMode;
+use Cosray\Assets\Size;
+use Cosray\Field;
+use Cosray\Field\Capability\Translatable;
+use Cosray\Field\Owner;
+use Cosray\Util\Html as HtmlUtil;
 use Generator;
 use Gumlet\ImageResize;
 

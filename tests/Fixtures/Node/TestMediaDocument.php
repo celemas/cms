@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Grid;
-use Celemas\Cms\Field\Image;
-use Celemas\Cms\Field\Option;
-use Celemas\Cms\Field\Video;
-use Celemas\Cms\Node\Contract\Title;
-use Celemas\Cms\Schema\Columns;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Options;
-use Celemas\Cms\Schema\Translate;
-use Celemas\Cms\Schema\TranslateFile;
+use Cosray\Field\Grid;
+use Cosray\Field\Image;
+use Cosray\Field\Option;
+use Cosray\Field\Video;
+use Cosray\Node\Contract\Title;
+use Cosray\Schema\Columns;
+use Cosray\Schema\Label;
+use Cosray\Schema\Options;
+use Cosray\Schema\Translate;
+use Cosray\Schema\TranslateFile;
 
 #[Label('Test Media Document')]
 class TestMediaDocument implements Title

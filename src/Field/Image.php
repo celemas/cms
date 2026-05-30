@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Prepare;
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Prepare;
+use Cosray\Validation\Shapes;
+use Cosray\Value;
 
 class Image extends Field implements
 	Capability\Translatable,

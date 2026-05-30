@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Assets\Size;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Assets\Size;
+use Cosray\Exception\RuntimeException;
+use Cosray\Tests\TestCase;
 
 final class SizeTest extends TestCase
 {

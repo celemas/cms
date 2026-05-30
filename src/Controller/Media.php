@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller;
+namespace Cosray\Controller;
 
-use Celemas\Cms\Assets\Assets;
-use Celemas\Cms\Assets\ResizeMode;
-use Celemas\Cms\Assets\Size;
-use Celemas\Cms\Config;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Middleware\Permission;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
+use Cosray\Assets\Assets;
+use Cosray\Assets\ResizeMode;
+use Cosray\Assets\Size;
+use Cosray\Config;
+use Cosray\Exception\RuntimeException;
+use Cosray\Middleware\Permission;
 use Gumlet\ImageResize;
 
 class Media

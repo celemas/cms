@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Field\Capability\SyntaxAware;
-use Celemas\Cms\Field\Capability\Translatable;
-use Celemas\Cms\Field\Field;
+use Cosray\Field\Capability\SyntaxAware;
+use Cosray\Field\Capability\Translatable;
+use Cosray\Field\Field;
 
 /**
  * @property-read Field&Translatable&SyntaxAware $field

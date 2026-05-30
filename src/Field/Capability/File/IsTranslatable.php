@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Capability\File;
+namespace Cosray\Field\Capability\File;
 
 trait IsTranslatable
 {

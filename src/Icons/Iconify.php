@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Icons;
+namespace Cosray\Icons;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Contract;
 use Closure;
+use Cosray\Config;
+use Cosray\Contract;
 
 final class Iconify implements Contract\Icons
 {

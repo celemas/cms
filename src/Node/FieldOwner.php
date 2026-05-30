@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Context;
-use Celemas\Cms\Field\Owner;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
 use Celemas\Core\Request;
+use Cosray\Config;
+use Cosray\Context;
+use Cosray\Field\Owner;
+use Cosray\Locale;
+use Cosray\Locales;
 
 class FieldOwner implements Owner
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Output;
+namespace Cosray\Finder\Output;
 
 interface Output
 {

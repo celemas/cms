@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit\Boiler\Error;
+namespace Cosray\Tests\Unit\Boiler\Error;
 
-use Celemas\Cms\Boiler\Error\WhoopsHandler;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Boiler\Error\WhoopsHandler;
+use Cosray\Tests\TestCase;
 use Exception;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use Psr\Http\Message\ResponseInterface;

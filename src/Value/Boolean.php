@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Field\Owner;
+use Cosray\Field\Field;
+use Cosray\Field\Owner;
 
 class Boolean extends Value
 {

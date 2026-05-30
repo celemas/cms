@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller;
+namespace Cosray\Controller;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Middleware\Permission;
-use Celemas\Cms\Node\Contract\HandlesFormPost;
-use Celemas\Cms\Node\Factory as NodeFactory;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Serializer;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Node\ViewRenderer;
-use Celemas\Cms\Util\Path;
 use Celemas\Container\Container;
 use Celemas\Core\Exception\HttpBadRequest;
 use Celemas\Core\Exception\HttpNotFound;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Response;
+use Cosray\Cms;
+use Cosray\Context;
+use Cosray\Exception\RuntimeException;
+use Cosray\Middleware\Permission;
+use Cosray\Node\Contract\HandlesFormPost;
+use Cosray\Node\Factory as NodeFactory;
+use Cosray\Node\Node;
+use Cosray\Node\Serializer;
+use Cosray\Node\Types;
+use Cosray\Node\ViewRenderer;
+use Cosray\Util\Path;
 use ReflectionMethod;
 
 class Page

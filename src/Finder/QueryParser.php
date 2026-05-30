@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Exception\ParserOutputException;
-use Celemas\Cms\Finder\Input\Token;
-use Celemas\Cms\Finder\Input\TokenGroup;
-use Celemas\Cms\Finder\Input\TokenType;
-use Celemas\Cms\Finder\Output\Comparison;
-use Celemas\Cms\Finder\Output\Exists;
-use Celemas\Cms\Finder\Output\Expression;
-use Celemas\Cms\Finder\Output\LeftParen;
-use Celemas\Cms\Finder\Output\NullComparison;
-use Celemas\Cms\Finder\Output\Operator;
-use Celemas\Cms\Finder\Output\RightParen;
-use Celemas\Cms\Finder\Output\UrlPath;
+use Cosray\Context;
+use Cosray\Exception\ParserException;
+use Cosray\Exception\ParserOutputException;
+use Cosray\Finder\Input\Token;
+use Cosray\Finder\Input\TokenGroup;
+use Cosray\Finder\Input\TokenType;
+use Cosray\Finder\Output\Comparison;
+use Cosray\Finder\Output\Exists;
+use Cosray\Finder\Output\Expression;
+use Cosray\Finder\Output\LeftParen;
+use Cosray\Finder\Output\NullComparison;
+use Cosray\Finder\Output\Operator;
+use Cosray\Finder\Output\RightParen;
+use Cosray\Finder\Output\UrlPath;
 
 final class QueryParser
 {

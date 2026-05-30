@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit\Boiler\Error;
+namespace Cosray\Tests\Unit\Boiler\Error;
 
-use Celemas\Cms\Boiler\Error\Handler;
-use Celemas\Cms\Config;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Error\Handler as ErrorHandler;
 use Celemas\Error\Renderer as ErrorRenderer;
+use Cosray\Boiler\Error\Handler;
+use Cosray\Config;
+use Cosray\Tests\TestCase;
 use Exception;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use Psr\Http\Message\ResponseFactoryInterface as ResponseFactory;

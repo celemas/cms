@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Boiler;
+namespace Cosray\Boiler;
 
 use Celemas\Boiler\Engine;
-use Celemas\Cms\Renderer as RendererInterface;
+use Cosray\Renderer as RendererInterface;
 use Override;
 
 /**

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller;
+namespace Cosray\Controller;
 
-use Celemas\Cms\Auth;
-use Celemas\Cms\Config;
-use Celemas\Cms\Users;
 use Celemas\Core\Exception\HttpForbidden;
 use Celemas\Core\Exception\HttpUnauthorized;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
+use Cosray\Auth;
+use Cosray\Config;
+use Cosray\Users;
 use SensitiveParameter;
 
 class Embed

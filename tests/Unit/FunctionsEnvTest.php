@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Tests\TestCase;
 
-use function Celemas\Cms\env;
+use function Cosray\env;
 
 final class FunctionsEnvTest extends TestCase
 {

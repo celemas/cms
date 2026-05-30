@@ -66,7 +66,7 @@
 				{#if $fields}
 					<div class="cms-modal-link-images-grid">
 						{#each $fields as field (field)}
-							{#if field.type === 'Celemas\\Cms\\Field\\Image'}
+							{#if field.type === 'Cosray\\Field\\Image'}
 								{#if $node.content[field.name] && $node.content[field.name].files}
 									{#each $node.content[field.name].files as file}
 										{#if file.file}
@@ -86,7 +86,7 @@
 				{#if $fields}
 					<div>
 						{#each $fields as field (field)}
-							{#if field.type === 'Celemas\\Cms\\Field\\File'}
+							{#if field.type === 'Cosray\\Field\\File'}
 								{#if $node.content[field.name] && $node.content[field.name].files}
 									{#each $node.content[field.name].files as file}
 										{#if file.file}

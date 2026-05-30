@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Tests\IntegrationTestCase;
 
 /**
  * Tests for Grid field persistence with various content types.

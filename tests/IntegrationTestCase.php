@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests;
+namespace Cosray\Tests;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Context;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Plugin;
 use Celemas\Container\Container;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Database;
 use Celemas\Quma\Delimiters;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Context;
+use Cosray\Node\Types;
+use Cosray\Plugin;
 use PDO;
 use RuntimeException;
 
@@ -145,43 +145,43 @@ class IntegrationTestCase extends TestCase
 
 		// Register test Node classes for fixture types
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-article', \Celemas\Cms\Tests\Fixtures\Node\TestArticle::class);
+			->add('test-article', \Cosray\Tests\Fixtures\Node\TestArticle::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-home', \Celemas\Cms\Tests\Fixtures\Node\TestHome::class);
+			->add('test-home', \Cosray\Tests\Fixtures\Node\TestHome::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-block', \Celemas\Cms\Tests\Fixtures\Node\TestBlock::class);
+			->add('test-block', \Cosray\Tests\Fixtures\Node\TestBlock::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-widget', \Celemas\Cms\Tests\Fixtures\Node\TestWidget::class);
+			->add('test-widget', \Cosray\Tests\Fixtures\Node\TestWidget::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-document', \Celemas\Cms\Tests\Fixtures\Node\TestDocument::class);
+			->add('test-document', \Cosray\Tests\Fixtures\Node\TestDocument::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('test-media-document', \Celemas\Cms\Tests\Fixtures\Node\TestMediaDocument::class);
+			->add('test-media-document', \Cosray\Tests\Fixtures\Node\TestMediaDocument::class);
 
 		// Register dynamically created test types (reuse TestPage for all page types)
 		$container->tag(Plugin::NODE_TAG)
-			->add('ordered-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('ordered-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('limit-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('limit-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('hidden-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('hidden-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('routing-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('routing-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('nested-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('nested-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('unpublished-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('unpublished-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('create-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('create-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('crud-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('crud-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('update-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('update-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('delete-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('delete-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 		$container->tag(Plugin::NODE_TAG)
-			->add('renderable-test-page', \Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
+			->add('renderable-test-page', \Cosray\Tests\Fixtures\Node\TestPage::class);
 
 		return $container;
 	}

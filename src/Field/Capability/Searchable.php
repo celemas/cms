@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Capability;
+namespace Cosray\Field\Capability;
 
-use Celemas\Cms\Schema\FulltextWeight;
+use Cosray\Schema\FulltextWeight;
 
 interface Searchable
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Util;
+namespace Cosray\Util;
 
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Exception\RuntimeException;
 
 class Path
 {

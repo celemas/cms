@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Field\Textarea;
-use Celemas\Cms\Node\Contract\Title;
-use Celemas\Cms\Schema\DefaultValue;
-use Celemas\Cms\Schema\Description;
-use Celemas\Cms\Schema\Hidden;
-use Celemas\Cms\Schema\Immutable;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Required;
-use Celemas\Cms\Schema\Rows;
-use Celemas\Cms\Schema\Translate;
-use Celemas\Cms\Schema\Validate;
-use Celemas\Cms\Schema\Width;
+use Cosray\Field\Text;
+use Cosray\Field\Textarea;
+use Cosray\Node\Contract\Title;
+use Cosray\Schema\DefaultValue;
+use Cosray\Schema\Description;
+use Cosray\Schema\Hidden;
+use Cosray\Schema\Immutable;
+use Cosray\Schema\Label;
+use Cosray\Schema\Required;
+use Cosray\Schema\Rows;
+use Cosray\Schema\Translate;
+use Cosray\Schema\Validate;
+use Cosray\Schema\Width;
 
 #[Label('Test Document')]
 class TestDocument implements Title

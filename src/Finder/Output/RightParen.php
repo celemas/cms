@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Output;
+namespace Cosray\Finder\Output;
 
-use Celemas\Cms\Finder\Input\Token;
+use Cosray\Finder\Input\Token;
 
 class RightParen implements Output
 {

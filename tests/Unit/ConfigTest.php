@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Util\Password;
 use Celemas\Core\Exception\ValueError;
+use Cosray\Config;
+use Cosray\Exception\RuntimeException;
+use Cosray\Tests\TestCase;
+use Cosray\Util\Password;
 use Dotenv\Exception\ValidationException;
 
 /**
@@ -458,7 +458,7 @@ final class ConfigTest extends TestCase
 
 	private function rootWithEnv(string $contents = ''): string
 	{
-		$root = sys_get_temp_dir() . '/celemas-cms-config-' . bin2hex(random_bytes(4));
+		$root = sys_get_temp_dir() . '/cosray-cms-config-' . bin2hex(random_bytes(4));
 		mkdir($root);
 		$this->roots[] = $root;
 

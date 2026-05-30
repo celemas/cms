@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Output;
+namespace Cosray\Finder\Output;
 
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\Input\Token;
-use Celemas\Cms\Finder\Input\TokenType;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\Input\Token;
+use Cosray\Finder\Input\TokenType;
 
 class Operator implements Output
 {

@@ -1,6 +1,6 @@
-# Celemas CMS Testing Guide
+# Cosray CMS Testing Guide
 
-This guide explains how to set up and run tests for the Celemas CMS project.
+This guide explains how to set up and run tests for the Cosray CMS project.
 
 ## Test Architecture
 
@@ -185,9 +185,9 @@ Extends `IntegrationTestCase` for end-to-end HTTP tests, provides:
 ```php
 <?php
 
-namespace Celemas\Cms\Tests;
+namespace Cosray\Tests;
 
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Tests\TestCase;
 
 final class PasswordTest extends TestCase
 {
@@ -206,9 +206,9 @@ final class PasswordTest extends TestCase
 ```php
 <?php
 
-namespace Celemas\Cms\Tests;
+namespace Cosray\Tests;
 
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Tests\IntegrationTestCase;
 
 final class MyIntegrationTest extends IntegrationTestCase
 {
@@ -237,9 +237,9 @@ final class MyIntegrationTest extends IntegrationTestCase
 ```php
 <?php
 
-namespace Celemas\Cms\Tests\End2End;
+namespace Cosray\Tests\End2End;
 
-use Celemas\Cms\Tests\End2EndTestCase;
+use Cosray\Tests\End2EndTestCase;
 
 final class NodeCrudTest extends End2EndTestCase
 {

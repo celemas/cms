@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Finder\Nodes;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Node\Contract\Title;
-use Celemas\Cms\Value\Value;
 use Celemas\Core\Request;
+use Cosray\Cms;
+use Cosray\Context;
+use Cosray\Exception\RuntimeException;
+use Cosray\Field\FieldHydrator;
+use Cosray\Field\Text;
+use Cosray\Finder\Nodes;
+use Cosray\Locale;
+use Cosray\Node\Contract\Title;
+use Cosray\Value\Value;
 
 class Node
 {

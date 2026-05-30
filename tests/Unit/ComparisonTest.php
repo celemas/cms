@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\ParserOutputException;
-use Celemas\Cms\Finder\QueryCompiler;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Context;
+use Cosray\Exception\ParserOutputException;
+use Cosray\Finder\QueryCompiler;
+use Cosray\Tests\TestCase;
 
 final class ComparisonTest extends TestCase
 {

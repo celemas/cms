@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\OrderCompiler;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\OrderCompiler;
+use Cosray\Tests\TestCase;
 
 const OB = "\n    ";
 

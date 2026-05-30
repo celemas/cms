@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Finder\Menu;
-use Celemas\Cms\Finder\Node;
-use Celemas\Cms\Finder\Nodes;
-use Celemas\Cms\Finder\Render;
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Types;
+use Cosray\Exception\RuntimeException;
+use Cosray\Finder\Menu;
+use Cosray\Finder\Node;
+use Cosray\Finder\Nodes;
+use Cosray\Finder\Render;
+use Cosray\Node\Factory;
+use Cosray\Node\Types;
 
 /**
  * @property-read Nodes $nodes

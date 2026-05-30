@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Node\Contract\ProvidesRenderContext;
-use Celemas\Cms\Renderer;
 use Celemas\Container\Container;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Field\FieldHydrator;
+use Cosray\Node\Contract\ProvidesRenderContext;
+use Cosray\Renderer;
 
 class ViewRenderer
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Prepare;
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\MatrixValue;
-use Celemas\Cms\Value\ValueContext;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Prepare;
+use Cosray\Validation\Shapes;
+use Cosray\Value\MatrixValue;
+use Cosray\Value\ValueContext;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionProperty;

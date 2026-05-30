@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\Youtube as YoutubeValue;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Shapes;
+use Cosray\Value\Youtube as YoutubeValue;
 
 class Iframe extends Field implements Capability\Translatable
 {

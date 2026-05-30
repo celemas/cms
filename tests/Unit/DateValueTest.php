@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Field\Date;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\ValueContext;
+use Cosray\Field\Date;
+use Cosray\Node\FieldOwner;
+use Cosray\Tests\TestCase;
+use Cosray\Value\ValueContext;
 use IntlDateFormatter;
 
 final class DateValueTest extends TestCase
 {
-	private function createContext(): \Celemas\Cms\Context
+	private function createContext(): \Cosray\Context
 	{
 		$psrRequest = $this->psrRequest();
-		$locales = new \Celemas\Cms\Locales();
+		$locales = new \Cosray\Locales();
 		$locales->add('en', title: 'English', domains: ['www.example.com']);
 
 		$psrRequest = $psrRequest
@@ -25,7 +25,7 @@ final class DateValueTest extends TestCase
 
 		$request = new \Celemas\Core\Request($psrRequest);
 
-		return new \Celemas\Cms\Context(
+		return new \Cosray\Context(
 			$this->db(),
 			$request,
 			$this->config(),
@@ -34,14 +34,14 @@ final class DateValueTest extends TestCase
 		);
 	}
 
-	private function createOwner(\Celemas\Cms\Context $context): FieldOwner
+	private function createOwner(\Cosray\Context $context): FieldOwner
 	{
 		return new FieldOwner($context, 'test-node');
 	}
 
 	public function testDateValueHasCorrectFormat(): void
 	{
-		$this->assertSame('Y-m-d', \Celemas\Cms\Value\Date::FORMAT);
+		$this->assertSame('Y-m-d', \Cosray\Value\Date::FORMAT);
 	}
 
 	public function testDateValueFormatsToExpectedString(): void
@@ -53,7 +53,7 @@ final class DateValueTest extends TestCase
 		]));
 
 		$value = $field->value();
-		$this->assertSame('2025-01-31', $value->format(\Celemas\Cms\Value\Date::FORMAT));
+		$this->assertSame('2025-01-31', $value->format(\Cosray\Value\Date::FORMAT));
 		$this->assertSame('2025-01-31', (string) $value);
 		$this->assertTrue($value->isset());
 	}

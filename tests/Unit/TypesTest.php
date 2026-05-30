@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\NoSuchProperty;
-use Celemas\Cms\Node\Schema\Registry;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithChildrenAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithHandleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithIconAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithNameAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithPermissionAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithRenderAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithRouteAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\PlainBlock;
-use Celemas\Cms\Tests\Fixtures\Node\PlainPage;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Exception\NoSuchProperty;
+use Cosray\Node\Schema\Registry;
+use Cosray\Node\Types;
+use Cosray\Tests\Fixtures\Node\NodeWithChildrenAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithHandleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithIconAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithNameAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithPermissionAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithRenderAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithRouteAttribute;
+use Cosray\Tests\Fixtures\Node\PlainBlock;
+use Cosray\Tests\Fixtures\Node\PlainPage;
+use Cosray\Tests\TestCase;
 
 final class TypesTest extends TestCase
 {

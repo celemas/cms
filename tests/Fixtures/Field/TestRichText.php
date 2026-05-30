@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Field;
+namespace Cosray\Tests\Fixtures\Field;
 
-use Celemas\Cms\Field\RichText;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Translate;
+use Cosray\Field\RichText;
+use Cosray\Schema\Label;
+use Cosray\Schema\Translate;
 
 #[Label('Test RichText')]
 #[Translate]

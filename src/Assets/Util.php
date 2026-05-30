@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Assets;
+namespace Cosray\Assets;
 
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Exception\RuntimeException;
 
 class Util
 {

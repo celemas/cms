@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Exception\RuntimeException;
 use Closure;
+use Cosray\Exception\RuntimeException;
 use Override;
 
 final class Section implements NavigationItem

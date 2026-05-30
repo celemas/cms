@@ -2,21 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller;
+namespace Cosray\Controller;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Context;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Middleware\Permission;
-use Celemas\Cms\Navigation;
-use Celemas\Cms\Node\Factory as NodeFactory;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\PathManager;
-use Celemas\Cms\Node\Serializer;
-use Celemas\Cms\Node\Store;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Plugin;
 use Celemas\Container\Container;
 use Celemas\Core\Exception\HttpBadRequest;
 use Celemas\Core\Exception\HttpNotFound;
@@ -24,6 +11,19 @@ use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
 use Celemas\Wire\Creator;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Context;
+use Cosray\Locales;
+use Cosray\Middleware\Permission;
+use Cosray\Navigation;
+use Cosray\Node\Factory as NodeFactory;
+use Cosray\Node\Node;
+use Cosray\Node\PathManager;
+use Cosray\Node\Serializer;
+use Cosray\Node\Store;
+use Cosray\Node\Types;
+use Cosray\Plugin;
 
 class OldPanel
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Assets;
+namespace Cosray\Assets;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Util\Path;
 use Celemas\Core\Request;
+use Cosray\Config;
+use Cosray\Util\Path;
 
 class Assets
 {

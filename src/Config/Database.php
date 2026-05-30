@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Exception\RuntimeException;
 
 final class Database
 {
@@ -21,7 +21,7 @@ final class Database
 	private ?array $placeholdersCache = null;
 
 	public function __construct(
-		private readonly \Celemas\Cms\Config $config,
+		private readonly \Cosray\Config $config,
 	) {}
 
 	/** @var ?non-empty-string */

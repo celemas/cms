@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\NoSuchProperty;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Tests\Fixtures\Field\TestMatrix;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\MatrixItem;
-use Celemas\Cms\Value\MatrixValue;
-use Celemas\Cms\Value\ValueContext;
+use Cosray\Context;
+use Cosray\Exception\NoSuchProperty;
+use Cosray\Node\FieldOwner;
+use Cosray\Tests\Fixtures\Field\TestMatrix;
+use Cosray\Tests\TestCase;
+use Cosray\Value\MatrixItem;
+use Cosray\Value\MatrixValue;
+use Cosray\Value\ValueContext;
 
 /**
  * @internal
@@ -23,7 +23,7 @@ final class MatrixValueTest extends TestCase
 	private function createContext(): Context
 	{
 		$psrRequest = $this->psrRequest();
-		$locales = new \Celemas\Cms\Locales();
+		$locales = new \Cosray\Locales();
 		$locales->add('en', title: 'English', domains: ['www.example.com']);
 		$locales->add('de', title: 'Deutsch', domains: ['www.example.de'], fallback: 'en');
 

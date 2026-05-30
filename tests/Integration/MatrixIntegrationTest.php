@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Tests\Fixtures\Node\TestMatrix;
-use Celemas\Cms\Tests\Fixtures\Node\TestNodeWithMatrix;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Node\Factory;
+use Cosray\Node\FieldOwner;
+use Cosray\Node\Types;
+use Cosray\Tests\Fixtures\Node\TestMatrix;
+use Cosray\Tests\Fixtures\Node\TestNodeWithMatrix;
+use Cosray\Tests\TestCase;
 
 class MatrixIntegrationTest extends TestCase
 {
-	private function createContext(): \Celemas\Cms\Context
+	private function createContext(): \Cosray\Context
 	{
 		$psrRequest = $this->psrRequest();
-		$locales = new \Celemas\Cms\Locales();
+		$locales = new \Cosray\Locales();
 		$locales->add('en', title: 'English', domains: ['www.example.com']);
 		$locales->add('de', title: 'Deutsch', domains: ['www.example.de'], fallback: 'en');
 
@@ -27,7 +27,7 @@ class MatrixIntegrationTest extends TestCase
 
 		$request = new \Celemas\Core\Request($psrRequest);
 
-		return new \Celemas\Cms\Context(
+		return new \Cosray\Context(
 			$this->db(),
 			$request,
 			$this->config(),
@@ -39,7 +39,7 @@ class MatrixIntegrationTest extends TestCase
 	public function testMyMatrixIntegration(): void
 	{
 		$context = $this->createContext();
-		$cms = $this->createStub(\Celemas\Cms\Cms::class);
+		$cms = $this->createStub(\Cosray\Cms::class);
 		$nodeFactory = new Factory($this->container(), types: new Types());
 		$hydrator = $nodeFactory->hydrator();
 
@@ -64,9 +64,9 @@ class MatrixIntegrationTest extends TestCase
 
 		// Test that matrix field exists and is accessible
 		$matrixField = $hydrator->getField($node, 'matrix');
-		$this->assertInstanceOf(\Celemas\Cms\Field\Matrix::class, $matrixField);
+		$this->assertInstanceOf(\Cosray\Field\Matrix::class, $matrixField);
 		$matrixValue = $matrixField->value();
-		$this->assertInstanceOf(\Celemas\Cms\Value\MatrixValue::class, $matrixValue);
+		$this->assertInstanceOf(\Cosray\Value\MatrixValue::class, $matrixValue);
 
 		// Test matrix iteration
 		$items = [];
@@ -75,14 +75,14 @@ class MatrixIntegrationTest extends TestCase
 		}
 
 		$this->assertCount(2, $items);
-		$this->assertInstanceOf(\Celemas\Cms\Value\MatrixItem::class, $items[0]);
-		$this->assertInstanceOf(\Celemas\Cms\Value\MatrixItem::class, $items[1]);
+		$this->assertInstanceOf(\Cosray\Value\MatrixItem::class, $items[0]);
+		$this->assertInstanceOf(\Cosray\Value\MatrixItem::class, $items[1]);
 
 		// Test subfield access
 		$firstItem = $matrixValue->first();
 		$this->assertNotNull($firstItem);
 		$this->assertEquals('First Item', $firstItem->title->unwrap());
-		$this->assertInstanceOf(\Celemas\Cms\Value\Grid::class, $firstItem->content);
+		$this->assertInstanceOf(\Cosray\Value\Grid::class, $firstItem->content);
 
 		// Test matrix methods
 		$this->assertEquals(2, $matrixValue->count());
@@ -98,7 +98,7 @@ class MatrixIntegrationTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', []),
+			new \Cosray\Value\ValueContext('test_matrix', []),
 		);
 
 		// Call value() to initialize subfields
@@ -111,8 +111,8 @@ class MatrixIntegrationTest extends TestCase
 		$subfields = $matrix->getSubfields();
 		$this->assertArrayHasKey('title', $subfields);
 		$this->assertArrayHasKey('content', $subfields);
-		$this->assertInstanceOf(\Celemas\Cms\Field\Text::class, $subfields['title']);
-		$this->assertInstanceOf(\Celemas\Cms\Field\Grid::class, $subfields['content']);
+		$this->assertInstanceOf(\Cosray\Field\Text::class, $subfields['title']);
+		$this->assertInstanceOf(\Cosray\Field\Grid::class, $subfields['content']);
 	}
 
 	public function testMatrixSubfieldTranslateStructure(): void
@@ -124,7 +124,7 @@ class MatrixIntegrationTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', [
+			new \Cosray\Value\ValueContext('test_matrix', [
 				'type' => 'matrix',
 				'value' => [
 					[

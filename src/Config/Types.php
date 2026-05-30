@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
 /**
  * @psalm-type SessionOptions = array{

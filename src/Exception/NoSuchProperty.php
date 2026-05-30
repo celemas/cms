@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Exception;
+namespace Cosray\Exception;
 
 class NoSuchProperty extends RuntimeException implements CmsException {}

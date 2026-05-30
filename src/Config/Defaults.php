@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
-use Celemas\Cms\Util\Password;
+use Cosray\Util\Password;
 
-use function Celemas\Cms\env;
+use function Cosray\env;
 
 final class Defaults
 {
@@ -81,7 +81,7 @@ final class Defaults
 			'icons.local.paths' => [],
 			'icons.iconify.base_url' => 'https://api.iconify.design',
 			'icons.iconify.timeout' => 5,
-			'icons.iconify.user_agent' => 'celemas/cms',
+			'icons.iconify.user_agent' => 'cosray/cms',
 		];
 	}
 

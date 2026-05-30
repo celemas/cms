@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Exception;
+namespace Cosray\Exception;
 
-use Celemas\Cms\Finder\Input\Token;
+use Cosray\Finder\Input\Token;
 use Throwable;
 
 class ParserOutputException extends ParserException implements CmsException

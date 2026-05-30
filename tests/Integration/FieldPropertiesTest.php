@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Serializer;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Tests\Fixtures\Node\TestDocument;
-use Celemas\Cms\Tests\Fixtures\Node\TestMediaDocument;
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Field\FieldHydrator;
+use Cosray\Node\Factory;
+use Cosray\Node\Serializer;
+use Cosray\Node\Types;
+use Cosray\Tests\Fixtures\Node\TestDocument;
+use Cosray\Tests\Fixtures\Node\TestMediaDocument;
+use Cosray\Tests\IntegrationTestCase;
 
 final class FieldPropertiesTest extends IntegrationTestCase
 {
@@ -36,7 +36,7 @@ final class FieldPropertiesTest extends IntegrationTestCase
 		$this->assertArrayHasKey('name', $properties);
 		$this->assertArrayHasKey('type', $properties);
 		$this->assertEquals('title', $properties['name']);
-		$this->assertEquals(\Celemas\Cms\Field\Text::class, $properties['type']);
+		$this->assertEquals(\Cosray\Field\Text::class, $properties['type']);
 	}
 
 	public function testFieldPropertiesCollectsFromMultipleCapabilities(): void

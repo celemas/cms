@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Util\Strings;
+use Cosray\Tests\TestCase;
+use Cosray\Util\Strings;
 
 final class UtilStringTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Schema;
+namespace Cosray\Schema;
 
 enum FulltextWeight
 {

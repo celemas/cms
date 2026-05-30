@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Contract\Icons as IconsContract;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Plugin;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Contract\Icons as IconsContract;
+use Cosray\Exception\RuntimeException;
+use Cosray\Plugin;
+use Cosray\Tests\TestCase;
 use ReflectionProperty;
 
 final class PluginIconsTest extends TestCase

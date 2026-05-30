@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Shapes;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Shapes;
 
 class Textarea extends Text implements Capability\Translatable
 {

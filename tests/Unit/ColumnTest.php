@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Column;
-use Celemas\Cms\Tests\TestCase;
 use Closure;
+use Cosray\Column;
+use Cosray\Tests\TestCase;
 
 final class ColumnTest extends TestCase
 {

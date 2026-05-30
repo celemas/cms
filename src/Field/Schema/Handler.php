@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Schema;
+namespace Cosray\Field\Schema;
 
-use Celemas\Cms\Field\Field;
+use Cosray\Field\Field;
 
 abstract class Handler
 {

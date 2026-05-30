@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Locales;
+use Cosray\Field\FieldHydrator;
+use Cosray\Locales;
 use ReflectionMethod;
 
-use function Celemas\Cms\nanoid;
+use function Cosray\nanoid;
 
 class Serializer
 {

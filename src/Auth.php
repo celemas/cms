@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Util\Time;
+use Cosray\Util\Time;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use RuntimeException;
 

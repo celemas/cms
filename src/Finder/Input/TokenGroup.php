@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Input;
+namespace Cosray\Finder\Input;
 
 enum TokenGroup
 {

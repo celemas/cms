@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
 use Celemas\Core\Exception\OutOfBoundsException;
 use Celemas\Core\Exception\ValueError;
 
 /**
- * @psalm-import-type BuiltinConfig from \Celemas\Cms\Config\Types
- * @psalm-import-type BuiltinConfigInput from \Celemas\Cms\Config\Types
+ * @psalm-import-type BuiltinConfig from \Cosray\Config\Types
+ * @psalm-import-type BuiltinConfigInput from \Cosray\Config\Types
  */
 class Config
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller\Panel;
+namespace Cosray\Controller\Panel;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Contract\Icons;
-use Celemas\Cms\Navigation;
 use Celemas\Container\Container;
 use Celemas\Core\Request;
+use Cosray\Config;
+use Cosray\Contract\Icons;
+use Cosray\Navigation;
 
 abstract class Panel
 {

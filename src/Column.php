@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Node\Node;
 use Closure;
+use Cosray\Field\FieldHydrator;
+use Cosray\Node\Node;
 
 final class Column
 {

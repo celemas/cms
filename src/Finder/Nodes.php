@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Plugin;
+use Cosray\Cms;
+use Cosray\Context;
+use Cosray\Exception\RuntimeException;
+use Cosray\Node\Factory;
+use Cosray\Node\Node;
+use Cosray\Node\Types;
+use Cosray\Plugin;
 use Generator;
 use Iterator;
 

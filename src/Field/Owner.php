@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
 use Celemas\Core\Request;
+use Cosray\Config;
+use Cosray\Locale;
+use Cosray\Locales;
 
 interface Owner
 {

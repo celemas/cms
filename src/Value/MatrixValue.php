@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Field\Matrix;
-use Celemas\Cms\Field\Owner;
+use Cosray\Field\Matrix;
+use Cosray\Field\Owner;
 use Generator;
 use IteratorAggregate;
 

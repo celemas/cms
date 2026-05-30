@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller\Panel;
+namespace Cosray\Controller\Panel;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Util\Path;
 use Celemas\Core\Exception\HttpNotFound;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
+use Cosray\Exception\RuntimeException;
+use Cosray\Util\Path;
 
 final class Assets extends Panel
 {

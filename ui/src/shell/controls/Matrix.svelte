@@ -54,39 +54,39 @@
 
 		// Return appropriate default structure based on field type
 		const typeMap: Record<string, () => GenericFieldData> = {
-			'Celemas\\Cms\\Field\\Text': () => ({
+			'Cosray\\Field\\Text': () => ({
 				type: 'text',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Celemas\\Cms\\Field\\Textarea': () => ({
+			'Cosray\\Field\\Textarea': () => ({
 				type: 'text',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Celemas\\Cms\\Field\\RichText': () => ({
+			'Cosray\\Field\\RichText': () => ({
 				type: 'richtext',
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Celemas\\Cms\\Field\\Code': () => ({
+			'Cosray\\Field\\Code': () => ({
 				type: 'code',
 				syntax: codeSyntaxes[0],
 				value: isTranslatable ? createTranslatableValue() : '',
 			}),
-			'Celemas\\Cms\\Field\\Checkbox': () => ({ type: 'checkbox', value: false }),
-			'Celemas\\Cms\\Field\\Number': () => ({ type: 'number', value: 0 }),
-			'Celemas\\Cms\\Field\\Date': () => ({ type: 'date', value: '' }),
-			'Celemas\\Cms\\Field\\Time': () => ({ type: 'time', value: '' }),
-			'Celemas\\Cms\\Field\\Image': () => ({ type: 'image', files: [] }),
-			'Celemas\\Cms\\Field\\Picture': () => ({ type: 'picture', files: [] }),
-			'Celemas\\Cms\\Field\\File': () => ({ type: 'file', files: [] }),
-			'Celemas\\Cms\\Field\\Video': () => ({ type: 'video', files: [] }),
-			'Celemas\\Cms\\Field\\Grid': () => ({
+			'Cosray\\Field\\Checkbox': () => ({ type: 'checkbox', value: false }),
+			'Cosray\\Field\\Number': () => ({ type: 'number', value: 0 }),
+			'Cosray\\Field\\Date': () => ({ type: 'date', value: '' }),
+			'Cosray\\Field\\Time': () => ({ type: 'time', value: '' }),
+			'Cosray\\Field\\Image': () => ({ type: 'image', files: [] }),
+			'Cosray\\Field\\Picture': () => ({ type: 'picture', files: [] }),
+			'Cosray\\Field\\File': () => ({ type: 'file', files: [] }),
+			'Cosray\\Field\\Video': () => ({ type: 'video', files: [] }),
+			'Cosray\\Field\\Grid': () => ({
 				type: 'grid',
 				columns: 12,
 				value: isTranslatable ? createTranslatableValue() : [],
 			}),
-			'Celemas\\Cms\\Field\\Option': () => ({ type: 'option', value: '' }),
-			'Celemas\\Cms\\Field\\Iframe': () => ({ type: 'iframe', value: '' }),
-			'Celemas\\Cms\\Field\\Hidden': () => ({ type: 'hidden', value: '' }),
+			'Cosray\\Field\\Option': () => ({ type: 'option', value: '' }),
+			'Cosray\\Field\\Iframe': () => ({ type: 'iframe', value: '' }),
+			'Cosray\\Field\\Hidden': () => ({ type: 'hidden', value: '' }),
 		};
 
 		const factory = typeMap[subfield.type];

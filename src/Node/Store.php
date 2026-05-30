@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Validation\ValidatorFactory;
 use Celemas\Core\Exception\HttpBadRequest;
 use Celemas\Core\Request;
 use Celemas\Quma\Database;
+use Cosray\Exception\RuntimeException;
+use Cosray\Locales;
+use Cosray\Validation\ValidatorFactory;
 use Throwable;
 
 class Store

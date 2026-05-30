@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
 /** @psalm-import-type MimeMap from Types */
 final class Upload
@@ -17,7 +17,7 @@ final class Upload
 	private ?array $videoCache = null;
 
 	public function __construct(
-		private readonly \Celemas\Cms\Config $config,
+		private readonly \Cosray\Config $config,
 	) {}
 
 	/** @var MimeMap */

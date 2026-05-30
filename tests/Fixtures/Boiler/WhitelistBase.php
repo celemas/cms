@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Boiler;
+namespace Cosray\Tests\Fixtures\Boiler;
 
 class WhitelistBase {}

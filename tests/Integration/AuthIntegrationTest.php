@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Auth;
-use Celemas\Cms\Session;
-use Celemas\Cms\Tests\IntegrationTestCase;
-use Celemas\Cms\Users;
+use Cosray\Auth;
+use Cosray\Session;
+use Cosray\Tests\IntegrationTestCase;
+use Cosray\Users;
 use Psr\Http\Message\ServerRequestInterface as PsrServerRequest;
 
 /**
@@ -53,7 +53,7 @@ final class AuthIntegrationTest extends IntegrationTestCase
 
 		$user = $auth->authenticate('test@example.com', 'correct-password', false, false);
 
-		$this->assertInstanceOf(\Celemas\Cms\User::class, $user);
+		$this->assertInstanceOf(\Cosray\User::class, $user);
 		$this->assertEquals($userId, $user->id);
 	}
 
@@ -98,7 +98,7 @@ final class AuthIntegrationTest extends IntegrationTestCase
 		// Authenticate with remember me and session initialization
 		$user = $auth->authenticate('remember@example.com', 'password', true, true);
 
-		$this->assertInstanceOf(\Celemas\Cms\User::class, $user);
+		$this->assertInstanceOf(\Cosray\User::class, $user);
 
 		// Verify session was created
 		$sessionUserId = $session->authenticatedUserId();
@@ -156,7 +156,7 @@ final class AuthIntegrationTest extends IntegrationTestCase
 
 		$user = $auth->user();
 
-		$this->assertInstanceOf(\Celemas\Cms\User::class, $user);
+		$this->assertInstanceOf(\Cosray\User::class, $user);
 		$this->assertEquals($userId, $user->id);
 
 		// Cleanup
@@ -240,7 +240,7 @@ final class AuthIntegrationTest extends IntegrationTestCase
 
 		$user = $auth->authenticateByOneTimeToken($token, false);
 
-		$this->assertInstanceOf(\Celemas\Cms\User::class, $user);
+		$this->assertInstanceOf(\Cosray\User::class, $user);
 		$this->assertEquals($userId, $user->id);
 
 		// Cleanup
@@ -362,7 +362,7 @@ final class AuthIntegrationTest extends IntegrationTestCase
 
 		$user = $auth->user();
 
-		$this->assertInstanceOf(\Celemas\Cms\User::class, $user);
+		$this->assertInstanceOf(\Cosray\User::class, $user);
 		$this->assertEquals($userId, $user->id);
 	}
 }

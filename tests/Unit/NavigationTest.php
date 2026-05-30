@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Navigation;
-use Celemas\Cms\Tests\Fixtures\Collection\TestArticlesCollection;
-use Celemas\Cms\Tests\Fixtures\Collection\TestHierarchyCollection;
-use Celemas\Cms\Tests\Fixtures\Collection\TestStaticIconCollection;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Exception\RuntimeException;
+use Cosray\Navigation;
+use Cosray\Tests\Fixtures\Collection\TestArticlesCollection;
+use Cosray\Tests\Fixtures\Collection\TestHierarchyCollection;
+use Cosray\Tests\Fixtures\Collection\TestStaticIconCollection;
+use Cosray\Tests\TestCase;
 
 final class NavigationTest extends TestCase
 {

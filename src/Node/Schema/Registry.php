@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node\Schema;
+namespace Cosray\Node\Schema;
 
-use Celemas\Cms\Schema\Children;
-use Celemas\Cms\Schema\Deletable;
-use Celemas\Cms\Schema\FieldOrder;
-use Celemas\Cms\Schema\Handle;
-use Celemas\Cms\Schema\Icon;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Permission;
-use Celemas\Cms\Schema\Render;
-use Celemas\Cms\Schema\Route;
-use Celemas\Cms\Schema\Title;
+use Cosray\Schema\Children;
+use Cosray\Schema\Deletable;
+use Cosray\Schema\FieldOrder;
+use Cosray\Schema\Handle;
+use Cosray\Schema\Icon;
+use Cosray\Schema\Label;
+use Cosray\Schema\Permission;
+use Cosray\Schema\Render;
+use Cosray\Schema\Route;
+use Cosray\Schema\Title;
 
 class Registry
 {

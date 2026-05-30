@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures;
+namespace Cosray\Tests\Fixtures;
 
-use Celemas\Cms\Renderer;
+use Cosray\Renderer;
 use Override;
 
 final class StaticRenderer implements Renderer

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller\Panel;
+namespace Cosray\Controller\Panel;
 
 final class Index extends Panel
 {

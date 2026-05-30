@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\RememberDetails;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Token;
+use Cosray\RememberDetails;
+use Cosray\Tests\TestCase;
+use Cosray\Token;
 
 final class RememberDetailsTest extends TestCase
 {

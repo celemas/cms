@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
 use BadMethodCallException;
-use Celemas\Cms\Boiler\Error\Handler as ErrorHandler;
-use Celemas\Cms\Node\Types;
 use Celemas\Container\Container;
 use Celemas\Container\Entry;
 use Celemas\Core\App as CoreApp;
@@ -21,6 +19,8 @@ use Celemas\Router\Route;
 use Celemas\Router\RouteAdder;
 use Celemas\Router\Router;
 use Closure;
+use Cosray\Boiler\Error\Handler as ErrorHandler;
+use Cosray\Node\Types;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface as Middleware;

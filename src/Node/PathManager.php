@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
 use Celemas\Quma\Database;
+use Cosray\Exception\RuntimeException;
+use Cosray\Locale;
+use Cosray\Locales;
 
-use function Celemas\Cms\nanoid;
+use function Cosray\nanoid;
 
 class PathManager
 {

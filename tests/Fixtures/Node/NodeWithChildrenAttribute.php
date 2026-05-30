@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Node\Contract\Title;
-use Celemas\Cms\Schema\Children;
+use Cosray\Node\Contract\Title;
+use Cosray\Schema\Children;
 
 #[Children(PlainPage::class, PlainBlock::class)]
 class NodeWithChildrenAttribute implements Title

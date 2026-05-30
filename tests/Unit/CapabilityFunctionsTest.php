@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Field\Schema\Handler;
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\ValueContext;
+use Cosray\Field\Schema\Handler;
+use Cosray\Field\Text;
+use Cosray\Node\FieldOwner;
+use Cosray\Tests\TestCase;
+use Cosray\Value\ValueContext;
 
 final class CapabilityFunctionsTest extends TestCase
 {
 	private function createTextField(string $name = 'test'): Text
 	{
-		$context = new \Celemas\Cms\Context(
+		$context = new \Cosray\Context(
 			$this->db(),
 			$this->request(),
 			$this->config(),

@@ -2,37 +2,37 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Config;
-use Celemas\Cms\Field\Code;
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Field\Grid;
-use Celemas\Cms\Field\Image;
-use Celemas\Cms\Field\Option;
-use Celemas\Cms\Field\Owner;
-use Celemas\Cms\Field\Schema\Registry;
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Schema\Columns;
-use Celemas\Cms\Schema\Description;
-use Celemas\Cms\Schema\Hidden;
-use Celemas\Cms\Schema\Immutable;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Limit;
-use Celemas\Cms\Schema\Options;
-use Celemas\Cms\Schema\Required;
-use Celemas\Cms\Schema\Rows;
-use Celemas\Cms\Schema\Syntax;
-use Celemas\Cms\Schema\Translate;
-use Celemas\Cms\Schema\TranslateFile;
-use Celemas\Cms\Schema\Validate;
-use Celemas\Cms\Schema\Width;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithFieldIconAttribute;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\ValueContext;
 use Celemas\Core\Request;
+use Cosray\Config;
+use Cosray\Field\Code;
+use Cosray\Field\FieldHydrator;
+use Cosray\Field\Grid;
+use Cosray\Field\Image;
+use Cosray\Field\Option;
+use Cosray\Field\Owner;
+use Cosray\Field\Schema\Registry;
+use Cosray\Field\Text;
+use Cosray\Locale;
+use Cosray\Locales;
+use Cosray\Schema\Columns;
+use Cosray\Schema\Description;
+use Cosray\Schema\Hidden;
+use Cosray\Schema\Immutable;
+use Cosray\Schema\Label;
+use Cosray\Schema\Limit;
+use Cosray\Schema\Options;
+use Cosray\Schema\Required;
+use Cosray\Schema\Rows;
+use Cosray\Schema\Syntax;
+use Cosray\Schema\Translate;
+use Cosray\Schema\TranslateFile;
+use Cosray\Schema\Validate;
+use Cosray\Schema\Width;
+use Cosray\Tests\Fixtures\Node\NodeWithFieldIconAttribute;
+use Cosray\Tests\TestCase;
+use Cosray\Value\ValueContext;
 
 final class FieldCapabilityPropertiesTest extends TestCase
 {
@@ -274,8 +274,8 @@ final class FieldCapabilityPropertiesTest extends TestCase
 	public function testLimitCapabilityReturnsLimitProperty(): void
 	{
 		$field = new class('image', $this->createOwner(), new ValueContext('image', [])) extends
-			Image implements \Celemas\Cms\Field\Capability\Limitable {
-			use \Celemas\Cms\Field\Capability\IsLimitable;
+			Image implements \Cosray\Field\Capability\Limitable {
+			use \Cosray\Field\Capability\IsLimitable;
 		};
 		$meta = new Limit(5, 2);
 
@@ -309,8 +309,8 @@ final class FieldCapabilityPropertiesTest extends TestCase
 	public function testSyntaxCapabilityReturnsSyntaxesProperty(): void
 	{
 		$field = new class('code', $this->createOwner(), new ValueContext('code', [])) extends
-			Text implements \Celemas\Cms\Field\Capability\SyntaxAware {
-			use \Celemas\Cms\Field\Capability\IsSyntaxAware;
+			Text implements \Cosray\Field\Capability\SyntaxAware {
+			use \Cosray\Field\Capability\IsSyntaxAware;
 		};
 		$meta = new Syntax('php', 'javascript', 'php');
 

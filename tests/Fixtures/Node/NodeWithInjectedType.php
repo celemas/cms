@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Node\Contract\Title as TitleContract;
-use Celemas\Cms\Node\Type;
-use Celemas\Cms\Schema\Label;
+use Cosray\Node\Contract\Title as TitleContract;
+use Cosray\Node\Type;
+use Cosray\Schema\Label;
 
 #[Label('Type Injected Node')]
 class NodeWithInjectedType implements TitleContract

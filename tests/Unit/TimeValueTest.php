@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Field\Time;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\ValueContext;
+use Cosray\Field\Time;
+use Cosray\Node\FieldOwner;
+use Cosray\Tests\TestCase;
+use Cosray\Value\ValueContext;
 use IntlDateFormatter;
 
 final class TimeValueTest extends TestCase
 {
-	private function createContext(): \Celemas\Cms\Context
+	private function createContext(): \Cosray\Context
 	{
 		$psrRequest = $this->psrRequest();
-		$locales = new \Celemas\Cms\Locales();
+		$locales = new \Cosray\Locales();
 		$locales->add('en', title: 'English', domains: ['www.example.com']);
 
 		$psrRequest = $psrRequest
@@ -25,7 +25,7 @@ final class TimeValueTest extends TestCase
 
 		$request = new \Celemas\Core\Request($psrRequest);
 
-		return new \Celemas\Cms\Context(
+		return new \Cosray\Context(
 			$this->db(),
 			$request,
 			$this->config(),
@@ -34,14 +34,14 @@ final class TimeValueTest extends TestCase
 		);
 	}
 
-	private function createOwner(\Celemas\Cms\Context $context): FieldOwner
+	private function createOwner(\Cosray\Context $context): FieldOwner
 	{
 		return new FieldOwner($context, 'test-node');
 	}
 
 	public function testTimeValueHasCorrectFormat(): void
 	{
-		$this->assertSame('H:i', \Celemas\Cms\Value\Time::FORMAT);
+		$this->assertSame('H:i', \Cosray\Value\Time::FORMAT);
 	}
 
 	public function testTimeValueFormatsToExpectedString(): void
@@ -53,7 +53,7 @@ final class TimeValueTest extends TestCase
 		]));
 
 		$value = $field->value();
-		$this->assertSame('13:45', $value->format(\Celemas\Cms\Value\Time::FORMAT));
+		$this->assertSame('13:45', $value->format(\Cosray\Value\Time::FORMAT));
 		$this->assertSame('13:45', (string) $value);
 		$this->assertTrue($value->isset());
 	}

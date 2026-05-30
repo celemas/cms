@@ -7,6 +7,6 @@
 		<img class="sidebar-logo-image" src="<?= $logo ?>" alt="Panel Logo" />
 	<?php else: ?>
 		<span class="sidebar-logo-mark" aria-hidden="true">D</span>
-		<span class="sidebar-logo-wordmark">Celemas</span>
+		<span class="sidebar-logo-wordmark">Cosray</span>
 	<?php endif ?>
 </a>

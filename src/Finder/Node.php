@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Context;
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Node as NodeWrapper;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Plugin;
 use Celemas\Core\Exception\HttpBadRequest;
+use Cosray\Cms;
+use Cosray\Context;
+use Cosray\Node\Factory;
+use Cosray\Node\Node as NodeWrapper;
+use Cosray\Node\Types;
+use Cosray\Plugin;
 
 class Node
 {

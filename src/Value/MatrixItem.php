@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Field\Matrix;
-use Celemas\Cms\Field\Owner;
+use Cosray\Field\Field;
+use Cosray\Field\Matrix;
+use Cosray\Field\Owner;
 use ReflectionClass;
 use ReflectionNamedType;
 use ReflectionProperty;
@@ -73,7 +73,7 @@ class MatrixItem extends Value
 			return $this->subfields[$name]->value();
 		}
 
-		throw new \Celemas\Cms\Exception\NoSuchProperty("Matrix item doesn't have subfield '{$name}'");
+		throw new \Cosray\Exception\NoSuchProperty("Matrix item doesn't have subfield '{$name}'");
 	}
 
 	protected function initSubfields(): void

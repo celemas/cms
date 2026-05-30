@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Util\Password;
+use Cosray\Tests\TestCase;
+use Cosray\Util\Password;
 
 final class PasswordTest extends TestCase
 {

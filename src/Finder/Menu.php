@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder;
+namespace Cosray\Finder;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Context;
+use Cosray\Exception\RuntimeException;
 use Iterator;
 
 class Menu implements Iterator

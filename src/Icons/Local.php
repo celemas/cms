@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Icons;
+namespace Cosray\Icons;
 
-use Celemas\Cms\Contract;
+use Cosray\Contract;
 
-use function Celemas\Cms\escape;
+use function Cosray\escape;
 
 final class Local implements Contract\Icons
 {

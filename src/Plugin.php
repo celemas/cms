@@ -2,14 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Boiler\Renderer as BoilerRenderer;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Icons\Iconify;
-use Celemas\Cms\Icons\Local;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Types;
 use Celemas\Container\Container;
 use Celemas\Container\Entry;
 use Celemas\Core\App;
@@ -20,11 +14,17 @@ use Celemas\Quma\Connection;
 use Celemas\Quma\Database;
 use Celemas\Quma\Delimiters;
 use Celemas\Router\Route;
+use Cosray\Boiler\Renderer as BoilerRenderer;
+use Cosray\Exception\RuntimeException;
+use Cosray\Icons\Iconify;
+use Cosray\Icons\Local;
+use Cosray\Node\Node;
+use Cosray\Node\Types;
 use PDO;
 
 class Plugin implements CorePlugin
 {
-	public const string NODE_TAG = 'celemas.cms.node';
+	public const string NODE_TAG = 'cosray.cms.node';
 
 	protected readonly Factory $factory;
 	protected readonly Container $container;
@@ -213,7 +213,7 @@ class Plugin implements CorePlugin
 			return $entry;
 		}
 
-		throw new RuntimeException('Renderers must imlement the `Celemas\\Cms\\Renderer` interface');
+		throw new RuntimeException('Renderers must imlement the `Cosray\\Renderer` interface');
 	}
 
 	protected function synchronizeNodes(): void

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Util\Html as HtmlUtil;
+use Cosray\Util\Html as HtmlUtil;
 use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 
 class RichText extends Text

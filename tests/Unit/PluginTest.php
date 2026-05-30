@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Boiler\Renderer as BoilerRenderer;
-use Celemas\Cms\Config;
-use Celemas\Cms\Plugin;
-use Celemas\Cms\Renderer;
-use Celemas\Cms\Tests\Fixtures\StaticRenderer;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Core\App;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Delimiters;
 use Celemas\Router\Router;
+use Cosray\Boiler\Renderer as BoilerRenderer;
+use Cosray\Config;
+use Cosray\Plugin;
+use Cosray\Renderer;
+use Cosray\Tests\Fixtures\StaticRenderer;
+use Cosray\Tests\TestCase;
 
 /**
  * @internal

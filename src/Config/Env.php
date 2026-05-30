@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
 use Dotenv\Dotenv;
 
-use function Celemas\Cms\env;
+use function Cosray\env;
 
 final class Env
 {

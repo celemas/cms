@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Assets\Assets;
-use Celemas\Cms\Exception\NoSuchProperty;
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Field\Owner;
-use Celemas\Cms\Locale;
+use Cosray\Assets\Assets;
+use Cosray\Exception\NoSuchProperty;
+use Cosray\Field\Field;
+use Cosray\Field\Owner;
+use Cosray\Locale;
 
 abstract class Value
 {

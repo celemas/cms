@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures;
+namespace Cosray\Tests\Fixtures;
 
 use Celemas\Quma\Connection;
 use Celemas\Quma\Contract\Migration;

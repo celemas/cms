@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\Text as TextValue;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Shapes;
+use Cosray\Value\Text as TextValue;
 
 class Text extends Field implements Capability\Translatable
 {

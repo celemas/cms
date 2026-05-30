@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Validation;
+namespace Cosray\Validation;
 
 use Celemas\Sire\Contract\Rule;
 use Celemas\Sire\Contract\ValidatesEmpty;

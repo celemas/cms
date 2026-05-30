@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Controller\Panel\Assets;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Core\Exception\HttpNotFound;
 use Celemas\Core\Request;
+use Cosray\Controller\Panel\Assets;
+use Cosray\Tests\TestCase;
 
 /**
  * @internal

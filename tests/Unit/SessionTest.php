@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Session;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Session;
+use Cosray\Tests\TestCase;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Collection;
+namespace Cosray\Tests\Fixtures\Collection;
 
-use Celemas\Cms\Collection;
-use Celemas\Cms\Finder\Nodes;
-use Celemas\Cms\Tests\Fixtures\Node\TestHierarchyChild;
+use Cosray\Collection;
+use Cosray\Finder\Nodes;
+use Cosray\Tests\Fixtures\Node\TestHierarchyChild;
 
 final class TestHierarchyCollection extends Collection
 {

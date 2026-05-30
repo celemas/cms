@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
 use Celemas\Container\Container;
 use Psr\Log\AbstractLogger;

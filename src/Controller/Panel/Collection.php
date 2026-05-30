@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller\Panel;
+namespace Cosray\Controller\Panel;
 
-use Celemas\Cms\Collection as CmsCollection;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Navigation;
 use Celemas\Core\Exception\HttpNotFound;
 use Celemas\Core\Request;
 use Celemas\Wire\Creator;
+use Cosray\Collection as CmsCollection;
+use Cosray\Exception\RuntimeException;
+use Cosray\Navigation;
 
 final class Collection extends Panel
 {

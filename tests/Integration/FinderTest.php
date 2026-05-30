@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Node\Factory;
+use Cosray\Node\Node;
+use Cosray\Node\Types;
+use Cosray\Tests\IntegrationTestCase;
 
 final class FinderTest extends IntegrationTestCase
 {

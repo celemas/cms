@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit\Boiler\Error;
+namespace Cosray\Tests\Unit\Boiler\Error;
 
-use Celemas\Cms\Boiler\Error\Renderer;
-use Celemas\Cms\Boiler\Error\RendererFactory;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Boiler\Error\Renderer;
+use Cosray\Boiler\Error\RendererFactory;
+use Cosray\Tests\TestCase;
 
 /**
  * @internal

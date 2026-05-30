@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Config;
+namespace Cosray\Config;
 
 final class Path
 {
 	public function __construct(
-		private readonly \Celemas\Cms\Config $config,
+		private readonly \Cosray\Config $config,
 	) {}
 
 	/** @var non-empty-string */

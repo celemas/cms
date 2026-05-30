@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\Boolean;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Shapes;
+use Cosray\Value\Boolean;
 
 class Checkbox extends Field
 {

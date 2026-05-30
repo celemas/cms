@@ -11,7 +11,7 @@
 			alt="Panel Logo" />
 	{:else}
 		<Logo />
-		<span>Celemas</span>
+		<span>Cosray</span>
 	{/if}
 </div>
 

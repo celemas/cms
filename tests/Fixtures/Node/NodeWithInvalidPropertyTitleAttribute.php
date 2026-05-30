@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Schema\Title;
+use Cosray\Schema\Title;
 
 class NodeWithInvalidPropertyTitleAttribute
 {

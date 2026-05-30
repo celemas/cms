@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Commands;
+namespace Cosray\Commands;
 
 use Celemas\Cli\Command;
 
@@ -10,7 +10,7 @@ class InitApp extends Command
 {
 	protected string $group = 'General';
 	protected string $name = 'init-app';
-	protected string $description = 'Initialize the Celemas app';
+	protected string $description = 'Initialize the Cosray app';
 
 	public function run(): int
 	{

@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Column;
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\NoSuchProperty;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Node\Factory;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Node\Serializer;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithClassTitleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithInjectedType;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithNumericTitleField;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithPropertyTitleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithTitleMethodWithoutInterface;
-use Celemas\Cms\Tests\Fixtures\Node\PlainBlock;
-use Celemas\Cms\Tests\Fixtures\Node\PlainPage;
-use Celemas\Cms\Tests\Fixtures\Node\PlainPageWithInit;
-use Celemas\Cms\Tests\Fixtures\Node\TestPage;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Core\Request;
+use Cosray\Column;
+use Cosray\Context;
+use Cosray\Exception\NoSuchProperty;
+use Cosray\Locales;
+use Cosray\Node\Factory;
+use Cosray\Node\Node;
+use Cosray\Node\Serializer;
+use Cosray\Node\Types;
+use Cosray\Tests\Fixtures\Node\NodeWithClassTitleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithInjectedType;
+use Cosray\Tests\Fixtures\Node\NodeWithNumericTitleField;
+use Cosray\Tests\Fixtures\Node\NodeWithPropertyTitleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithTitleMethodWithoutInterface;
+use Cosray\Tests\Fixtures\Node\PlainBlock;
+use Cosray\Tests\Fixtures\Node\PlainPage;
+use Cosray\Tests\Fixtures\Node\PlainPageWithInit;
+use Cosray\Tests\Fixtures\Node\TestPage;
+use Cosray\Tests\TestCase;
 use stdClass;
 
 /**
@@ -33,7 +33,7 @@ use stdClass;
 final class NodeFactoryTest extends TestCase
 {
 	private Context $context;
-	private \Celemas\Cms\Cms $cms;
+	private \Cosray\Cms $cms;
 	private Factory $factory;
 	private Types $types;
 
@@ -43,7 +43,7 @@ final class NodeFactoryTest extends TestCase
 		$this->types = new Types();
 
 		$this->context = $this->createContext();
-		$this->cms = $this->createStub(\Celemas\Cms\Cms::class);
+		$this->cms = $this->createStub(\Cosray\Cms::class);
 		$this->factory = new Factory($this->container(), types: $this->types);
 	}
 

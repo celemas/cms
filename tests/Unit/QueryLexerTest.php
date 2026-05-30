@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\QueryLexer;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\QueryLexer;
+use Cosray\Tests\TestCase;
 
 const QUERY_ALL_ELEMENTS =
 	'(true = field1 & builtin1>now&null >=   13 & field2 < "string") |'

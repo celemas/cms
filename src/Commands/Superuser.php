@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Commands;
+namespace Cosray\Commands;
 
 use Celemas\Cli\Command;
 use Celemas\Quma\Connection;

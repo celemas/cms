@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Output;
+namespace Cosray\Finder\Output;
 
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\CompilesField;
-use Celemas\Cms\Finder\Input\Token;
-use Celemas\Cms\Finder\Input\TokenType;
 use Celemas\Quma\Database;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\CompilesField;
+use Cosray\Finder\Input\Token;
+use Cosray\Finder\Input\TokenType;
 
 abstract readonly class Expression
 {

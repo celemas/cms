@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use function Celemas\Cms\escape;
+use function Cosray\escape;
 
 class Option extends Value
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Assets;
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Assets;
+use Cosray\Exception\RuntimeException;
 use Gumlet\ImageResize;
 
-use function Celemas\Cms\escape;
+use function Cosray\escape;
 
 class Image extends File
 {

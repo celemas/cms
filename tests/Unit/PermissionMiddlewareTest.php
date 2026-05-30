@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Middleware\Permission;
-use Celemas\Cms\Session;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\User;
-use Celemas\Cms\Users;
 use Celemas\Core\Exception\HttpForbidden;
 use Celemas\Core\Exception\HttpUnauthorized;
 use Celemas\Core\Factory\Factory;
 use Celemas\Quma\Database;
+use Cosray\Middleware\Permission;
+use Cosray\Session;
+use Cosray\Tests\TestCase;
+use Cosray\User;
+use Cosray\Users;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

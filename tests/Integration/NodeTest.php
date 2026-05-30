@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Tests\IntegrationTestCase;
 
 final class NodeTest extends IntegrationTestCase
 {
@@ -256,7 +256,7 @@ final class NodeTest extends IntegrationTestCase
 
 	public function testPagePathRequiresDefaultLocale(): void
 	{
-		$pathManager = new \Celemas\Cms\Node\PathManager();
+		$pathManager = new \Cosray\Node\PathManager();
 		$context = $this->createContext();
 		$db = $this->testDb;
 		$locales = $context->locales();
@@ -269,7 +269,7 @@ final class NodeTest extends IntegrationTestCase
 		]);
 
 		$this->throws(
-			\Celemas\Cms\Exception\RuntimeException::class,
+			\Cosray\Exception\RuntimeException::class,
 			'Hauptsprache',
 		);
 

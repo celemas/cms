@@ -1,4 +1,4 @@
-# Celemas CMS Panel
+# Cosray CMS Panel
 
 ## License
 

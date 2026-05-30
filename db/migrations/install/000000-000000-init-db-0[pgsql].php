@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Quma\Migrations\M260519_151046_Ddl0;
 
-use Celemas\Cms\Config;
+use Cosray\Config;
 use Celemas\Quma\Contract;
 use Celemas\Quma\Environment;
 

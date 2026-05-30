@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Controller\Auth;
-use Celemas\Cms\Controller\Embed;
-use Celemas\Cms\Controller\Media;
-use Celemas\Cms\Controller\Nodes;
-use Celemas\Cms\Controller\OldPanel;
-use Celemas\Cms\Controller\Page;
-use Celemas\Cms\Controller\Panel;
-use Celemas\Cms\Controller\User;
-use Celemas\Cms\Middleware\InitRequest;
-use Celemas\Cms\Middleware\PanelAuth;
-use Celemas\Cms\Middleware\Session;
 use Celemas\Core\App;
 use Celemas\Core\Factory\Factory;
 use Celemas\Quma\Database;
 use Celemas\Router\Group;
 use Celemas\Router\Route;
+use Cosray\Controller\Auth;
+use Cosray\Controller\Embed;
+use Cosray\Controller\Media;
+use Cosray\Controller\Nodes;
+use Cosray\Controller\OldPanel;
+use Cosray\Controller\Page;
+use Cosray\Controller\Panel;
+use Cosray\Controller\User;
+use Cosray\Middleware\InitRequest;
+use Cosray\Middleware\PanelAuth;
+use Cosray\Middleware\Session;
 
 class Routes
 {

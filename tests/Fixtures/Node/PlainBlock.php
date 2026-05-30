@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Schema\Deletable;
-use Celemas\Cms\Schema\Label;
+use Cosray\Field\Text;
+use Cosray\Schema\Deletable;
+use Cosray\Schema\Label;
 
 #[Label('Plain Block')]
 #[Deletable(false)]

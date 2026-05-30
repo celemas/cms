@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller\Panel;
+namespace Cosray\Controller\Panel;
 
-use Celemas\Cms\Auth as CmsAuth;
-use Celemas\Cms\Config;
-use Celemas\Cms\Validation;
 use Celemas\Container\Container;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Core\Response;
+use Cosray\Auth as CmsAuth;
+use Cosray\Config;
+use Cosray\Validation;
 
 final class Login extends Panel
 {

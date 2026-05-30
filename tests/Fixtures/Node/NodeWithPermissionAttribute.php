@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Node\Contract\Title;
-use Celemas\Cms\Schema\Permission;
+use Cosray\Node\Contract\Title;
+use Cosray\Schema\Permission;
 
 #[Permission([
 	'read' => 'me',

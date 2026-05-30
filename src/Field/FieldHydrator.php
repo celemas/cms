@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Field\Schema\Registry;
-use Celemas\Cms\Value\ValueContext;
+use Cosray\Field\Schema\Registry;
+use Cosray\Value\ValueContext;
 use ReflectionClass;
 use ReflectionProperty;
 use ReflectionUnionType;

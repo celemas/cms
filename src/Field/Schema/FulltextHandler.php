@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Schema;
+namespace Cosray\Field\Schema;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Field\Capability\Searchable;
-use Celemas\Cms\Field\Field;
+use Cosray\Exception\RuntimeException;
+use Cosray\Field\Capability\Searchable;
+use Cosray\Field\Field;
 
 class FulltextHandler extends Handler
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Grid;
-use Celemas\Cms\Field\Matrix;
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Required;
-use Celemas\Cms\Schema\Translate;
+use Cosray\Field\Grid;
+use Cosray\Field\Matrix;
+use Cosray\Field\Text;
+use Cosray\Schema\Label;
+use Cosray\Schema\Required;
+use Cosray\Schema\Translate;
 
 class TestMatrix extends Matrix
 {

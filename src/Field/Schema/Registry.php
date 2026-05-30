@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Schema;
+namespace Cosray\Field\Schema;
 
-use Celemas\Cms\Schema\Columns;
-use Celemas\Cms\Schema\DefaultValue;
-use Celemas\Cms\Schema\Description;
-use Celemas\Cms\Schema\Fulltext;
-use Celemas\Cms\Schema\Hidden;
-use Celemas\Cms\Schema\Icon;
-use Celemas\Cms\Schema\Immutable;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Limit;
-use Celemas\Cms\Schema\Options;
-use Celemas\Cms\Schema\Required;
-use Celemas\Cms\Schema\Rows;
-use Celemas\Cms\Schema\Syntax;
-use Celemas\Cms\Schema\Translate;
-use Celemas\Cms\Schema\TranslateFile;
-use Celemas\Cms\Schema\Validate;
-use Celemas\Cms\Schema\Width;
+use Cosray\Schema\Columns;
+use Cosray\Schema\DefaultValue;
+use Cosray\Schema\Description;
+use Cosray\Schema\Fulltext;
+use Cosray\Schema\Hidden;
+use Cosray\Schema\Icon;
+use Cosray\Schema\Immutable;
+use Cosray\Schema\Label;
+use Cosray\Schema\Limit;
+use Cosray\Schema\Options;
+use Cosray\Schema\Required;
+use Cosray\Schema\Rows;
+use Cosray\Schema\Syntax;
+use Cosray\Schema\Translate;
+use Cosray\Schema\TranslateFile;
+use Cosray\Schema\Validate;
+use Cosray\Schema\Width;
 
 class Registry
 {

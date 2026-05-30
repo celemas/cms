@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Collection;
+namespace Cosray\Tests\Fixtures\Collection;
 
-use Celemas\Cms\Collection;
-use Celemas\Cms\Finder\Nodes;
+use Cosray\Collection;
+use Cosray\Finder\Nodes;
 
 final class TestStaticIconCollection extends Collection
 {

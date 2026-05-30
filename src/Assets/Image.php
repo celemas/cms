@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Assets;
+namespace Cosray\Assets;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Util\Path;
 use Celemas\Core\Request;
+use Cosray\Exception\RuntimeException;
+use Cosray\Util\Path;
 use Gumlet\ImageResize;
 use Gumlet\ImageResizeException;
 

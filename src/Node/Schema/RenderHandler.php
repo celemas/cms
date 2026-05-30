@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node\Schema;
+namespace Cosray\Node\Schema;
 
 class RenderHandler extends Handler
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Input;
+namespace Cosray\Finder\Input;
 
-use Celemas\Cms\Exception\ParserException;
 use Celemas\Quma\Database;
+use Cosray\Exception\ParserException;
 
 readonly class Token
 {

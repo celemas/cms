@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Field;
+namespace Cosray\Tests\Fixtures\Field;
 
-use Celemas\Cms\Field\Number;
-use Celemas\Cms\Schema\Label;
+use Cosray\Field\Number;
+use Cosray\Schema\Label;
 
 #[Label('Test Number')]
 class TestNumber extends Number {}

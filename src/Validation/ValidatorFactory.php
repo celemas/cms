@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Validation;
+namespace Cosray\Validation;
 
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Node\Factory;
 use Celemas\Sire\Shape;
+use Cosray\Field\Field;
+use Cosray\Field\FieldHydrator;
+use Cosray\Locales;
+use Cosray\Node\Factory;
 
 class ValidatorFactory
 {

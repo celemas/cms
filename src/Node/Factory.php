@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Context;
-use Celemas\Cms\Field\FieldHydrator;
-use Celemas\Cms\Field\Schema\Registry as SchemaRegistry;
-use Celemas\Cms\Node\Contract\HasInit;
 use Celemas\Container\Container;
 use Celemas\Core\Factory\Factory as CoreFactory;
 use Celemas\Core\Request;
 use Celemas\Quma\Database;
 use Celemas\Wire\Creator;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Context;
+use Cosray\Field\FieldHydrator;
+use Cosray\Field\Schema\Registry as SchemaRegistry;
+use Cosray\Node\Contract\HasInit;
 use WeakMap;
 
-use function Celemas\Cms\nanoid;
+use function Cosray\nanoid;
 
 class Factory
 {

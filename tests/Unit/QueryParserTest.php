@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\ParserException;
-use Celemas\Cms\Finder\Output\Comparison;
-use Celemas\Cms\Finder\Output\Exists;
-use Celemas\Cms\Finder\Output\LeftParen;
-use Celemas\Cms\Finder\Output\Operator;
-use Celemas\Cms\Finder\Output\RightParen;
-use Celemas\Cms\Finder\Output\UrlPath;
-use Celemas\Cms\Finder\QueryParser;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Context;
+use Cosray\Exception\ParserException;
+use Cosray\Finder\Output\Comparison;
+use Cosray\Finder\Output\Exists;
+use Cosray\Finder\Output\LeftParen;
+use Cosray\Finder\Output\Operator;
+use Cosray\Finder\Output\RightParen;
+use Cosray\Finder\Output\UrlPath;
+use Cosray\Finder\QueryParser;
+use Cosray\Tests\TestCase;
 
 final class QueryParserTest extends TestCase
 {

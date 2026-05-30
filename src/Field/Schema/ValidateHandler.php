@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field\Schema;
+namespace Cosray\Field\Schema;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Field\Capability\Validatable;
-use Celemas\Cms\Field\Field;
+use Cosray\Exception\RuntimeException;
+use Cosray\Field\Capability\Validatable;
+use Cosray\Field\Field;
 
 class ValidateHandler extends Handler
 {

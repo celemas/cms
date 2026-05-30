@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\End2End;
+namespace Cosray\Tests\End2End;
 
-use Celemas\Cms\Tests\End2EndTestCase;
+use Cosray\Tests\End2EndTestCase;
 
 /**
  * End-to-end tests for panel authentication and login flow.

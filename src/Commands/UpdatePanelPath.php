@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Commands;
+namespace Cosray\Commands;
 
 use Celemas\Cli\Command;
-use Celemas\Cms\Config;
+use Cosray\Config;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 

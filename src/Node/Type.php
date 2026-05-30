@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Exception\NoSuchProperty;
+use Cosray\Exception\NoSuchProperty;
 
 class Type
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Field\Schema\Handler;
-use Celemas\Cms\Field\Schema\Registry;
-use Celemas\Cms\Value\Value;
-use Celemas\Cms\Value\ValueContext;
 use Celemas\Sire\Shape;
+use Cosray\Field\Schema\Handler;
+use Cosray\Field\Schema\Registry;
+use Cosray\Value\Value;
+use Cosray\Value\ValueContext;
 use ReflectionProperty;
 
 abstract class Field implements

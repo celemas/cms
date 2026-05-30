@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Finder\Output;
+namespace Cosray\Finder\Output;
 
-use Celemas\Cms\Context;
-use Celemas\Cms\Exception\ParserOutputException;
-use Celemas\Cms\Finder\Input\Token;
+use Cosray\Context;
+use Cosray\Exception\ParserOutputException;
+use Cosray\Finder\Input\Token;
 
 final readonly class Exists extends Expression implements Output
 {

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Field\Text;
-use Celemas\Cms\Node\Contract\Title as TitleContract;
-use Celemas\Cms\Schema\FieldOrder;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Route;
-use Celemas\Cms\Schema\Title;
-use Celemas\Cms\Schema\Translate;
+use Cosray\Field\Text;
+use Cosray\Node\Contract\Title as TitleContract;
+use Cosray\Schema\FieldOrder;
+use Cosray\Schema\Label;
+use Cosray\Schema\Route;
+use Cosray\Schema\Title;
+use Cosray\Schema\Translate;
 
 #[Label('Plain Page')]
 #[Route('/plain-page/{uid}')]

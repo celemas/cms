@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Value;
+namespace Cosray\Value;
 
-use Celemas\Cms\Assets;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Field\Capability\File\Translatable as FileTranslatable;
-use Celemas\Cms\Field\Capability\Translatable;
-use Celemas\Cms\Field\Field;
-use Celemas\Cms\Field\Owner;
+use Cosray\Assets;
+use Cosray\Exception\RuntimeException;
+use Cosray\Field\Capability\File\Translatable as FileTranslatable;
+use Cosray\Field\Capability\Translatable;
+use Cosray\Field\Field;
+use Cosray\Field\Owner;
 
 /**
  * @property-read Field&FileTranslatable&Translatable $field

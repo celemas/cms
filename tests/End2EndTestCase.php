@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests;
+namespace Cosray\Tests;
 
-use Celemas\Cms\Boiler\Error\Handler;
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Node\Node;
-use Celemas\Cms\Plugin;
 use Celemas\Core\App;
 use Celemas\Core\Factory\Laminas;
 use Celemas\Core\Plugin as CorePlugin;
 use Celemas\Core\Request;
 use Celemas\Router\Router;
+use Cosray\Boiler\Error\Handler;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Locale;
+use Cosray\Locales;
+use Cosray\Node\Node;
+use Cosray\Plugin;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\NullLogger;
 
@@ -267,13 +267,13 @@ class End2EndTestCase extends IntegrationTestCase
 	{
 		$plugin = new Plugin($config);
 
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestPage::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestArticle::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestHome::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestBlock::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestWidget::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestDocument::class);
-		$plugin->node(\Celemas\Cms\Tests\Fixtures\Node\TestMediaDocument::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestPage::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestArticle::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestHome::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestBlock::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestWidget::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestDocument::class);
+		$plugin->node(\Cosray\Tests\Fixtures\Node\TestMediaDocument::class);
 
 		return $plugin;
 	}

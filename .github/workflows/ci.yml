@@ -15,10 +15,10 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     env:
-      CELEMAS_CMS_DB_HOST: localhost
-      CELEMAS_CMS_DB_NAME: celemas
-      CELEMAS_CMS_DB_USER: celemas
-      CELEMAS_CMS_DB_PASSWORD: celemas
+      COSRAY_CMS_DB_HOST: localhost
+      COSRAY_CMS_DB_NAME: celemas
+      COSRAY_CMS_DB_USER: celemas
+      COSRAY_CMS_DB_PASSWORD: celemas
     steps:
       - name: Setup PHP
         uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # 2.37.1
@@ -47,8 +47,8 @@ jobs:
       - name: Start postgresql server and create test db
         run: |
           sudo systemctl start postgresql.service
-          sudo -u postgres psql -c "CREATE USER ${{ env.CELEMAS_CMS_DB_USER }} WITH PASSWORD '${{ env.CELEMAS_CMS_DB_PASSWORD }}' CREATEDB;"
-          sudo -u postgres createdb --owner ${{ env.CELEMAS_CMS_DB_USER }} ${{ env.CELEMAS_CMS_DB_NAME }}
+          sudo -u postgres psql -c "CREATE USER ${{ env.COSRAY_CMS_DB_USER }} WITH PASSWORD '${{ env.COSRAY_CMS_DB_PASSWORD }}' CREATEDB;"
+          sudo -u postgres createdb --owner ${{ env.COSRAY_CMS_DB_USER }} ${{ env.COSRAY_CMS_DB_NAME }}
 
       - name: Initialize database schema
         run: php ./run db:migrations --apply

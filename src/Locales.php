@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms;
+namespace Cosray;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Middleware\AddLocale;
 use Celemas\Core\App;
 use Celemas\Core\Plugin as CorePlugin;
 use Closure;
+use Cosray\Exception\RuntimeException;
+use Cosray\Middleware\AddLocale;
 use Iterator;
 use Psr\Http\Message\ServerRequestInterface as Request;
 

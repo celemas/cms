@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Field\Matrix;
-use Celemas\Cms\Node\FieldOwner;
-use Celemas\Cms\Tests\Fixtures\Field\TestMatrix;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Value\MatrixValue;
+use Cosray\Field\Matrix;
+use Cosray\Node\FieldOwner;
+use Cosray\Tests\Fixtures\Field\TestMatrix;
+use Cosray\Tests\TestCase;
+use Cosray\Value\MatrixValue;
 
 class MatrixTest extends TestCase
 {
-	private function createContext(): \Celemas\Cms\Context
+	private function createContext(): \Cosray\Context
 	{
 		$psrRequest = $this->psrRequest();
-		$locales = new \Celemas\Cms\Locales();
+		$locales = new \Cosray\Locales();
 		$locales->add('en', title: 'English', domains: ['www.example.com']);
 		$locales->add('de', title: 'Deutsch', domains: ['www.example.de'], fallback: 'en');
 
@@ -26,7 +26,7 @@ class MatrixTest extends TestCase
 
 		$request = new \Celemas\Core\Request($psrRequest);
 
-		return new \Celemas\Cms\Context(
+		return new \Cosray\Context(
 			$this->db(),
 			$request,
 			$this->config(),
@@ -43,7 +43,7 @@ class MatrixTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', []),
+			new \Cosray\Value\ValueContext('test_matrix', []),
 		);
 
 		$this->assertInstanceOf(Matrix::class, $matrix);
@@ -61,7 +61,7 @@ class MatrixTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', []),
+			new \Cosray\Value\ValueContext('test_matrix', []),
 		);
 		$structure = $matrix->structure();
 
@@ -77,7 +77,7 @@ class MatrixTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', []),
+			new \Cosray\Value\ValueContext('test_matrix', []),
 		);
 		$shape = $matrix->shape();
 
@@ -92,7 +92,7 @@ class MatrixTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', []),
+			new \Cosray\Value\ValueContext('test_matrix', []),
 		);
 		$subfields = $matrix->getSubfields();
 
@@ -130,7 +130,7 @@ class MatrixTest extends TestCase
 		$matrix = new TestMatrix(
 			'test_matrix',
 			$owner,
-			new \Celemas\Cms\Value\ValueContext('test_matrix', $storedData),
+			new \Cosray\Value\ValueContext('test_matrix', $storedData),
 		);
 
 		// Call structure() without arguments - this is how Node::content() calls it

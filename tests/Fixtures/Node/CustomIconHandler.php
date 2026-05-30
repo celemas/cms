@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures\Node;
+namespace Cosray\Tests\Fixtures\Node;
 
-use Celemas\Cms\Node\Schema\Handler;
+use Cosray\Node\Schema\Handler;
 
 class CustomIconHandler extends Handler
 {

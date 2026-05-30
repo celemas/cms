@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\GridItemValidator;
-use Celemas\Cms\Validation\Prepare;
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\Grid as GridValue;
 use Celemas\Sire\Shape;
+use Cosray\Validation\GridItemValidator;
+use Cosray\Validation\Prepare;
+use Cosray\Validation\Shapes;
+use Cosray\Value\Grid as GridValue;
 
 class Grid extends Field implements Capability\Translatable, Capability\Grid\Resizable
 {

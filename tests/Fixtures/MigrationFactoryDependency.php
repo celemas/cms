@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Fixtures;
+namespace Cosray\Tests\Fixtures;
 
 final class MigrationFactoryDependency {}

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Tests\TestCase;
-use Celemas\Cms\Util\Path;
+use Cosray\Exception\RuntimeException;
+use Cosray\Tests\TestCase;
+use Cosray\Util\Path;
 
 final class PathTest extends TestCase
 {

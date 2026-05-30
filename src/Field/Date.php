@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Field;
+namespace Cosray\Field;
 
-use Celemas\Cms\Validation\Shapes;
-use Celemas\Cms\Value\Date as DateValue;
 use Celemas\Sire\Shape;
+use Cosray\Validation\Shapes;
+use Cosray\Value\Date as DateValue;
 
 class Date extends Field
 {

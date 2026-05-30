@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Boiler\Error;
+namespace Cosray\Boiler\Error;
 
-use Celemas\Cms\Cms;
-use Celemas\Cms\Config;
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Locale;
-use Celemas\Cms\Locales;
-use Celemas\Cms\Node\Node;
 use Celemas\Core\Exception\HttpError;
 use Celemas\Core\Factory\Factory;
 use Celemas\Core\Request;
 use Celemas\Error\Handler as ErrorHandler;
 use Celemas\Error\Renderer as ErrorRenderer;
+use Cosray\Cms;
+use Cosray\Config;
+use Cosray\Exception\RuntimeException;
+use Cosray\Locale;
+use Cosray\Locales;
+use Cosray\Node\Node;
 use Psr\Log\LoggerInterface as Logger;
 
 /** @psalm-api */

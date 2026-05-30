@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node;
+namespace Cosray\Node;
 
-use Celemas\Cms\Node\Schema\Registry;
+use Cosray\Node\Schema\Registry;
 
 class Types
 {

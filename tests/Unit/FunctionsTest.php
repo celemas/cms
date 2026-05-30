@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Tests\TestCase;
 
-use function Celemas\Cms\escape;
-use function Celemas\Cms\nanoid;
+use function Cosray\escape;
+use function Cosray\nanoid;
 
 final class FunctionsTest extends TestCase
 {

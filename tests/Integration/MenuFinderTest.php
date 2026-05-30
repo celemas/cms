@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Integration;
+namespace Cosray\Tests\Integration;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Finder\Menu;
-use Celemas\Cms\Tests\IntegrationTestCase;
+use Cosray\Exception\RuntimeException;
+use Cosray\Finder\Menu;
+use Cosray\Tests\IntegrationTestCase;
 
 /**
  * Integration tests for Menu finder.

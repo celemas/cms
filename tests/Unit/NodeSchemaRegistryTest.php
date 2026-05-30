@@ -2,45 +2,45 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\Exception\RuntimeException;
-use Celemas\Cms\Node\Schema;
-use Celemas\Cms\Node\Schema\ChildrenHandler;
-use Celemas\Cms\Node\Schema\DeletableHandler;
-use Celemas\Cms\Node\Schema\FieldOrderHandler;
-use Celemas\Cms\Node\Schema\HandleHandler;
-use Celemas\Cms\Node\Schema\IconHandler;
-use Celemas\Cms\Node\Schema\LabelHandler;
-use Celemas\Cms\Node\Schema\PermissionHandler;
-use Celemas\Cms\Node\Schema\Registry;
-use Celemas\Cms\Node\Schema\RenderHandler;
-use Celemas\Cms\Node\Schema\RouteHandler;
-use Celemas\Cms\Node\Schema\TitleHandler;
-use Celemas\Cms\Node\Types;
-use Celemas\Cms\Schema\Children;
-use Celemas\Cms\Schema\Deletable;
-use Celemas\Cms\Schema\FieldOrder;
-use Celemas\Cms\Schema\Handle;
-use Celemas\Cms\Schema\Icon;
-use Celemas\Cms\Schema\Label;
-use Celemas\Cms\Schema\Permission;
-use Celemas\Cms\Schema\Render;
-use Celemas\Cms\Schema\Route;
-use Celemas\Cms\Schema\Title;
-use Celemas\Cms\Tests\Fixtures\Node\CustomIcon;
-use Celemas\Cms\Tests\Fixtures\Node\CustomIconHandler;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithChildrenAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithCustomAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithHandleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithIconAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithInvalidPropertyTitleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithNameAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithPropertyTitleAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\NodeWithRouteAttribute;
-use Celemas\Cms\Tests\Fixtures\Node\PlainBlock;
-use Celemas\Cms\Tests\Fixtures\Node\PlainPage;
-use Celemas\Cms\Tests\TestCase;
+use Cosray\Exception\RuntimeException;
+use Cosray\Node\Schema;
+use Cosray\Node\Schema\ChildrenHandler;
+use Cosray\Node\Schema\DeletableHandler;
+use Cosray\Node\Schema\FieldOrderHandler;
+use Cosray\Node\Schema\HandleHandler;
+use Cosray\Node\Schema\IconHandler;
+use Cosray\Node\Schema\LabelHandler;
+use Cosray\Node\Schema\PermissionHandler;
+use Cosray\Node\Schema\Registry;
+use Cosray\Node\Schema\RenderHandler;
+use Cosray\Node\Schema\RouteHandler;
+use Cosray\Node\Schema\TitleHandler;
+use Cosray\Node\Types;
+use Cosray\Schema\Children;
+use Cosray\Schema\Deletable;
+use Cosray\Schema\FieldOrder;
+use Cosray\Schema\Handle;
+use Cosray\Schema\Icon;
+use Cosray\Schema\Label;
+use Cosray\Schema\Permission;
+use Cosray\Schema\Render;
+use Cosray\Schema\Route;
+use Cosray\Schema\Title;
+use Cosray\Tests\Fixtures\Node\CustomIcon;
+use Cosray\Tests\Fixtures\Node\CustomIconHandler;
+use Cosray\Tests\Fixtures\Node\NodeWithChildrenAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithCustomAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithHandleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithIconAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithInvalidPropertyTitleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithNameAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithPropertyTitleAttribute;
+use Cosray\Tests\Fixtures\Node\NodeWithRouteAttribute;
+use Cosray\Tests\Fixtures\Node\PlainBlock;
+use Cosray\Tests\Fixtures\Node\PlainPage;
+use Cosray\Tests\TestCase;
 use ValueError;
 
 final class NodeSchemaRegistryTest extends TestCase
@@ -204,7 +204,7 @@ final class NodeSchemaRegistryTest extends TestCase
 
 		$this->throws(
 			RuntimeException::class,
-			"The #[Title] attribute on node 'Celemas\\Cms\\Tests\\Fixtures\\Node\\PlainPage' requires a non-empty field name when used on a class.",
+			"The #[Title] attribute on node 'Cosray\\Tests\\Fixtures\\Node\\PlainPage' requires a non-empty field name when used on a class.",
 		);
 		$handler->resolve(new Title(), PlainPage::class);
 	}
@@ -332,7 +332,7 @@ final class NodeSchemaRegistryTest extends TestCase
 
 		$this->throws(
 			RuntimeException::class,
-			"The #[Title] attribute on property 'Celemas\\Cms\\Tests\\Fixtures\\Node\\NodeWithInvalidPropertyTitleAttribute::heading' requires a field-typed property.",
+			"The #[Title] attribute on property 'Cosray\\Tests\\Fixtures\\Node\\NodeWithInvalidPropertyTitleAttribute::heading' requires a field-typed property.",
 		);
 		new Schema(NodeWithInvalidPropertyTitleAttribute::class, $registry);
 	}

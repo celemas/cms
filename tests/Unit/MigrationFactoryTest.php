@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\MigrationFactory;
-use Celemas\Cms\Tests\Fixtures\ContainerMigration;
-use Celemas\Cms\Tests\Fixtures\MigrationFactoryDependency;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Container\Container;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Environment;
+use Cosray\MigrationFactory;
+use Cosray\Tests\Fixtures\ContainerMigration;
+use Cosray\Tests\Fixtures\MigrationFactoryDependency;
+use Cosray\Tests\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Util;
+namespace Cosray\Util;
 
-use Celemas\Cms\Config;
+use Cosray\Config;
 
 class Password
 {

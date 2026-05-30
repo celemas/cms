@@ -1,6 +1,6 @@
 {
-	"name": "celemas/cms",
-	"description": "Celemas content management system and framework",
+	"name": "cosray/cms",
+	"description": "Cosray content management system and framework",
 	"type": "library",
 	"license": "MIT",
 	"authors": [
@@ -41,7 +41,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Celemas\\Cms\\": "src"
+			"Cosray\\": "src"
 		},
 		"files": [
 			"src/Functions.php"
@@ -49,7 +49,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Celemas\\Cms\\Tests\\": "tests"
+			"Cosray\\Tests\\": "tests"
 		}
 	},
 	"scripts": {

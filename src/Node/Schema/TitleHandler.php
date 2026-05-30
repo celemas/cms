@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Node\Schema;
+namespace Cosray\Node\Schema;
 
-use Celemas\Cms\Exception\RuntimeException;
+use Cosray\Exception\RuntimeException;
 
 class TitleHandler extends Handler
 {

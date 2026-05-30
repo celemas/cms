@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Tests\Unit;
+namespace Cosray\Tests\Unit;
 
-use Celemas\Cms\App;
-use Celemas\Cms\Config;
-use Celemas\Cms\Middleware\Session as SessionMiddleware;
-use Celemas\Cms\Plugin;
-use Celemas\Cms\Tests\Fixtures\Collection\TestArticlesCollection;
-use Celemas\Cms\Tests\Fixtures\StaticRenderer;
-use Celemas\Cms\Tests\TestCase;
 use Celemas\Core\App as CoreApp;
 use Celemas\Core\Exception\ValueError;
 use Celemas\Core\Plugin as CorePlugin;
 use Celemas\Core\Response as CoreResponse;
 use Celemas\Error\Handler as ErrorHandler;
 use Celemas\Router\Router;
+use Cosray\App;
+use Cosray\Config;
+use Cosray\Middleware\Session as SessionMiddleware;
+use Cosray\Plugin;
+use Cosray\Tests\Fixtures\Collection\TestArticlesCollection;
+use Cosray\Tests\Fixtures\StaticRenderer;
+use Cosray\Tests\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\AbstractLogger;
 
@@ -136,12 +136,12 @@ final class AppTest extends TestCase
 		$app = $this->app();
 
 		$app->section('Content')->collection(TestArticlesCollection::class);
-		$app->node(\Celemas\Cms\Tests\Fixtures\Node\TestArticle::class);
+		$app->node(\Cosray\Tests\Fixtures\Node\TestArticle::class);
 
 		$this->assertArrayHasKey('test-articles', $app->navigation()->refs());
 		$this->assertSame(
 			'test-article',
-			$app->meta()->get(\Celemas\Cms\Tests\Fixtures\Node\TestArticle::class, 'handle'),
+			$app->meta()->get(\Cosray\Tests\Fixtures\Node\TestArticle::class, 'handle'),
 		);
 	}
 

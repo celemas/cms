@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Middleware;
+namespace Cosray\Middleware;
 
 use Attribute;
-use Celemas\Cms\Auth;
-use Celemas\Cms\Config;
-use Celemas\Cms\Users;
 use Celemas\Core\Exception\HttpForbidden;
 use Celemas\Core\Exception\HttpUnauthorized;
 use Celemas\Wire\Call;
+use Cosray\Auth;
+use Cosray\Config;
+use Cosray\Users;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface as Middleware;

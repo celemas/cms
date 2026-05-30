@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Celemas\Cms\Controller;
+namespace Cosray\Controller;
 
 use Celemas\Core\Request;
 
