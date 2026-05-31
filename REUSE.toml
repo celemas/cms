@@ -3,11 +3,11 @@ version = 1
 [[annotations]]
 path = ["run", "**/*.*"]
 precedence = "closest"
-SPDX-FileCopyrightText = "2022-present Celemas developers and contributors"
+SPDX-FileCopyrightText = "2022-present Cosray developers and contributors"
 SPDX-License-Identifier = "MPL-2.0"
 
 [[annotations]]
 path = ["panel/**/*.*", "ui/**/*.*"]
 precedence = "closest"
-SPDX-FileCopyrightText = "2022-present Celemas developers and contributors"
+SPDX-FileCopyrightText = "2022-present Cosray developers and contributors"
 SPDX-License-Identifier = "MIT"
