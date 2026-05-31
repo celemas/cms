@@ -144,7 +144,7 @@ final class HandlerTest extends TestCase
 	private function errorConfig(array $settings = [], bool $debug = false): Config
 	{
 		return new Config(self::root(), array_merge([
-			'app.name' => 'celemas',
+			'app.name' => 'cosray',
 			'app.debug' => $debug,
 			'app.env' => 'test',
 			'path.root' => self::root(),
