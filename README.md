@@ -43,6 +43,7 @@ The CMS app exposes the common CMS configuration API (`section()`, `collection()
 Content types (nodes) are plain PHP classes annotated with attributes. There is no base class to extend. Dependencies are autowired from the Registry via `celemas/wire`.
 
 ```php
+use Celemas\Core\Request;
 use Cosray\Field\Text;
 use Cosray\Field\Grid;
 use Cosray\Field\Image;
@@ -52,7 +53,6 @@ use Cosray\Schema\Required;
 use Cosray\Schema\Route;
 use Cosray\Schema\Translate;
 use Cosray\Node\Contract\Title;
-use Celemas\Core\Request;
 
 #[Label('Department'), Route('/{title}')]
 final class Department implements Title
