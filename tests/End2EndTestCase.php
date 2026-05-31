@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Cosray\Tests;
 
+use Celemas\Boiler\Error\Handler;
 use Celemas\Core\App;
 use Celemas\Core\Factory\Laminas;
 use Celemas\Core\Plugin as CorePlugin;
 use Celemas\Core\Request;
 use Celemas\Router\Router;
-use Cosray\Boiler\Error\Handler;
 use Cosray\Cms;
 use Cosray\Config;
 use Cosray\Locale;
@@ -226,7 +226,7 @@ class End2EndTestCase extends IntegrationTestCase
 		$router = new Router();
 		$container = $this->container();
 		$config = $this->config([
-			'db.dsn' => 'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
+			'db.dsn' => self::testDbDsn(),
 			'path.root' => self::root(),
 			'path.public' => self::root() . '/public',
 			'path.views' => '/tests/Fixtures/templates',

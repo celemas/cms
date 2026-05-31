@@ -68,6 +68,8 @@ Repository-level development commands:
 
 Local test database workflow used in this repo:
 
+- Defaults: host `localhost`, database/user/password `cosray`
+- Override with `COSRAY_DB_HOST`, `COSRAY_DB_NAME`, `COSRAY_DB_USER`, or `COSRAY_DB_PASSWORD`
 - `./run recreate-db`
 - `./run migrate --apply`
 

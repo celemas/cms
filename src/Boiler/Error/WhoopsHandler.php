@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cosray\Boiler\Error;
+namespace Celemas\Boiler\Error;
 
 use Celemas\Error\DebugHandler;
 use Override;

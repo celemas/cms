@@ -49,7 +49,7 @@ class IntegrationTestCase extends TestCase
 		$config = new Config(self::root());
 
 		self::$sharedConnection = new Connection(
-			'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
+			self::testDbDsn(),
 			self::root() . '/db/sql',
 		)
 			->placeholders(Delimiters::comments(), $config->db->placeholders)
@@ -121,7 +121,7 @@ class IntegrationTestCase extends TestCase
 		$config = new Config(self::root());
 
 		return new Connection(
-			'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
+			self::testDbDsn(),
 			self::root() . '/db/sql',
 		)
 			->placeholders(Delimiters::comments(), $config->db->placeholders)

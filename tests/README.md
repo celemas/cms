@@ -34,12 +34,19 @@ sudo systemctl start postgresql
 
 ### 2. Database User
 
-Create a PostgreSQL user for testing:
+Create a PostgreSQL user and database for testing. The default connection uses host `localhost` and database/user/password `cosray`.
 
 ```bash
-# Create user with CREATEDB privilege and password 'celemas'
-sudo -u postgres createuser --pwprompt --createdb celemas
-createdb --user celemas --owner celemas celemas
+# Run on the PostgreSQL host or adapt -h/--host for your setup.
+sudo -u postgres createuser --pwprompt --createdb cosray
+createdb --user cosray --owner cosray cosray
+```
+
+Override the host or credentials with environment variables:
+
+```bash
+COSRAY_DB_HOST=<your-hostname> composer test
+COSRAY_DB_HOST=<your-hostname> ./run migrate --apply
 ```
 
 ### 3. Initialize Test Database
@@ -59,7 +66,7 @@ The `recreate-db` command:
 - Terminates existing connections to the database
 - Drops the database if it exists
 - Creates a fresh database
-- Sets the owner to `celemas`
+- Sets the owner to `cosray`
 
 ## Running Tests
 
@@ -383,10 +390,10 @@ RuntimeException: Migrations not applied to test database. Run: ./run migrate --
 **Error:**
 
 ```
-PDOException: SQLSTATE[28000] authentication failed for user "celemas"
+PDOException: SQLSTATE[28000] authentication failed for user "cosray"
 ```
 
-**Solution:** Ensure the database user exists with the correct password 'celemas' and with CREATEDB privilege. See above.
+**Solution:** Ensure the database user exists with the correct password `cosray` and with CREATEDB privilege. See above.
 
 ### "Permission denied to create database"
 
@@ -399,21 +406,26 @@ PDOException: permission denied to create database
 **Solution:** Grant CREATEDB privilege to the user:
 
 ```bash
-sudo -u postgres psql -c "ALTER USER celemas CREATEDB;"
+sudo -u postgres psql -c "ALTER USER cosray CREATEDB;"
 ```
 
 ### Database Connection Configuration
 
-Test database credentials are configured in `tests/TestCase.php`:
+Test database credentials default to:
 
 ```php
-// Database: celemas
-// User: celemas
-// Password: celemas
+// Database: cosray
+// User: cosray
+// Password: cosray
 // Host: localhost
 ```
 
-To use different credentials, modify the `conn()` method in `TestCase.php`.
+Override them with environment variables:
+
+- `COSRAY_DB_HOST`
+- `COSRAY_DB_NAME`
+- `COSRAY_DB_USER`
+- `COSRAY_DB_PASSWORD`
 
 ## CI/CD Integration
 
@@ -427,14 +439,19 @@ on: [push, pull_request]
 jobs:
     test:
         runs-on: ubuntu-latest
+        env:
+            COSRAY_DB_HOST: localhost
+            COSRAY_DB_NAME: cosray
+            COSRAY_DB_USER: cosray
+            COSRAY_DB_PASSWORD: cosray
 
         services:
             postgres:
                 image: postgres:16
                 env:
-                    POSTGRES_DB: celemas
-                    POSTGRES_USER: celemas
-                    POSTGRES_PASSWORD: celemas
+                    POSTGRES_DB: cosray
+                    POSTGRES_USER: cosray
+                    POSTGRES_PASSWORD: cosray
                 options: >-
                     --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 

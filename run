@@ -13,19 +13,28 @@ use Celemas\Quma\Commands as QumaCommands;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Delimiters;
 
-$config = new Config(__DIR__);
+$env = static function (string $key, string $default): string {
+	$value = getenv($key);
+
+	return $value !== false && $value !== '' ? $value : $default;
+};
+
+$host = $env('COSRAY_DB_HOST', 'localhost');
+$database = $env('COSRAY_DB_NAME', 'cosray');
+$username = $env('COSRAY_DB_USER', 'cosray');
+$password = $env('COSRAY_DB_PASSWORD', 'cosray');
+$dsn = "pgsql:host={$host};dbname={$database};user={$username};password={$password}";
+
+$config = new Config(__DIR__, ['db.dsn' => $dsn]);
 $container = new Container();
 $container->add($config::class, $config);
 
-$conn = new Connection(
-	'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
-	__DIR__ . '/db/sql',
-)
+$conn = new Connection($dsn, __DIR__ . '/db/sql')
 	->placeholders(Delimiters::comments(), $config->db->placeholders)
 	->migrations(__DIR__ . '/db/migrations/install');
 
 $commands = QumaCommands::get($conn, migrationFactory: new MigrationFactory($container));
-$commands->add(new RecreateDb('celemas', 'celemas', 'celemas'));
+$commands->add(new RecreateDb($database, $username, $password, $host));
 
 $runner = new Runner($commands);
 

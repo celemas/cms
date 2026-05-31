@@ -247,7 +247,7 @@ final class AppTest extends TestCase
 	private function appConfig(array $settings = []): Config
 	{
 		return $this->config(array_merge([
-			'db.dsn' => 'pgsql:dbname=celemas',
+			'db.dsn' => 'pgsql:dbname=cosray',
 			'error.enabled' => false,
 			'path.root' => self::root() . '/tests/Fixtures/Boiler',
 			'path.views' => '/templates',

@@ -41,7 +41,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Cosray\\": "src"
+			"Cosray\\": "src",
+			"Celemas\\Boiler\\": "src/Boiler"
 		},
 		"files": [
 			"src/Functions.php"

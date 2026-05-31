@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Cosray\Tests\Unit;
 
+use Celemas\Boiler\Renderer as BoilerRenderer;
 use Celemas\Core\App;
 use Celemas\Quma\Connection;
 use Celemas\Quma\Delimiters;
 use Celemas\Router\Router;
-use Cosray\Boiler\Renderer as BoilerRenderer;
 use Cosray\Config;
 use Cosray\Plugin;
 use Cosray\Renderer;
@@ -67,7 +67,7 @@ final class PluginTest extends TestCase
 	private function loadPlugin(?callable $configure = null, array $settings = []): App
 	{
 		$config = $this->config(array_merge([
-			'db.dsn' => 'pgsql:dbname=celemas',
+			'db.dsn' => 'pgsql:dbname=cosray',
 			'path.root' => self::root() . '/tests/Fixtures/Boiler',
 			'path.views' => '/templates',
 		], $settings));

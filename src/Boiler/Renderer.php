@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Cosray\Boiler;
+namespace Celemas\Boiler;
 
-use Celemas\Boiler\Engine;
 use Cosray\Renderer as RendererInterface;
 use Override;
 

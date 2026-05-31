@@ -44,6 +44,23 @@ class TestCase extends BaseTestCase
 		return dirname(__DIR__);
 	}
 
+	protected static function testDbDsn(): string
+	{
+		$host = self::testDbSetting('COSRAY_DB_HOST', 'localhost');
+		$database = self::testDbSetting('COSRAY_DB_NAME', 'cosray');
+		$username = self::testDbSetting('COSRAY_DB_USER', 'cosray');
+		$password = self::testDbSetting('COSRAY_DB_PASSWORD', 'cosray');
+
+		return "pgsql:host={$host};dbname={$database};user={$username};password={$password}";
+	}
+
+	private static function testDbSetting(string $key, string $default): string
+	{
+		$value = $_SERVER[$key] ?? $_ENV[$key] ?? getenv($key);
+
+		return is_string($value) && $value !== '' ? $value : $default;
+	}
+
 	public function throws(string $exception, ?string $message = null): void
 	{
 		$this->expectException($exception);
@@ -145,7 +162,7 @@ class TestCase extends BaseTestCase
 
 		return new \Celemas\Quma\Database(
 			new \Celemas\Quma\Connection(
-				'pgsql:host=localhost;dbname=celemas;user=celemas;password=celemas',
+				self::testDbDsn(),
 				self::root() . '/db/sql',
 			)
 				->placeholders(Delimiters::comments(), $config->db->placeholders)
