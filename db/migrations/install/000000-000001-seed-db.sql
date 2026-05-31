@@ -13,7 +13,7 @@ INSERT INTO /*:cms.prefix:*/users (
 ) VALUES (
 	'0000000000000',
 	'system',
-	'system@celemas.dev',
+	'system@cosray.dev',
 	'$2y$13$r30g3d99Nf5r4t6L1eDAa.FcMNazGHpwndT0Ak6Bvfhr7SEhaeepC',
 	'system',
 	true,
